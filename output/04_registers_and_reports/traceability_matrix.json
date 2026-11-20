@@ -1,0 +1,128 @@
+[
+  {
+    "policy_id": "NST-HR-POL-001",
+    "title": "Employee Handbook",
+    "primary_owner": "Ishita Rao",
+    "audience": "ALL_EMPLOYEES",
+    "source_authority": "L1 Directory + L2 Master Data",
+    "restricted_sections": [
+      "Disciplinary Action and Termination Procedures (HR_ONLY)"
+    ]
+  },
+  {
+    "policy_id": "NST-HR-POL-002",
+    "title": "Leave, Attendance & Working Hours Policy",
+    "primary_owner": "Ishita Rao",
+    "audience": "ALL_EMPLOYEES",
+    "source_authority": "L1 Directory + L2 Master Data",
+    "restricted_sections": []
+  },
+  {
+    "policy_id": "NST-HR-POL-003",
+    "title": "Code of Conduct & Workplace Ethics",
+    "primary_owner": "Ishita Rao",
+    "audience": "ALL_EMPLOYEES",
+    "source_authority": "L1 Directory + L2 Master Data",
+    "restricted_sections": []
+  },
+  {
+    "policy_id": "NST-HR-POL-004",
+    "title": "Remote Work & Work From Home Policy",
+    "primary_owner": "Ishita Rao",
+    "audience": "ALL_EMPLOYEES",
+    "source_authority": "L1 Directory + L2 Master Data",
+    "restricted_sections": []
+  },
+  {
+    "policy_id": "NST-HR-POL-005",
+    "title": "Recruitment & Employee Referral Policy",
+    "primary_owner": "Ishita Rao",
+    "audience": "ALL_EMPLOYEES",
+    "source_authority": "L1 Directory + L2 Master Data",
+    "restricted_sections": []
+  },
+  {
+    "policy_id": "NST-HR-POL-006",
+    "title": "Onboarding & Employee Development Policy",
+    "primary_owner": "Ishita Rao",
+    "audience": "ALL_EMPLOYEES",
+    "source_authority": "L1 Directory + L2 Master Data",
+    "restricted_sections": []
+  },
+  {
+    "policy_id": "NST-HR-POL-007",
+    "title": "Performance Review & Promotion Policy",
+    "primary_owner": "Ishita Rao",
+    "audience": "MANAGERS_AND_HR",
+    "source_authority": "L1 Directory + L2 Master Data",
+    "restricted_sections": []
+  },
+  {
+    "policy_id": "NST-IT-POL-001",
+    "title": "Information Security & Acceptable Use Policy",
+    "primary_owner": "Neha Kulkarni",
+    "audience": "ALL_EMPLOYEES",
+    "source_authority": "L1 Directory + L2 Master Data",
+    "restricted_sections": [
+      "Security Incident Response Procedures — Internal Playbook (IT_ONLY)"
+    ]
+  },
+  {
+    "policy_id": "NST-IT-GDE-001",
+    "title": "Laptop, Software & Account Setup Guide",
+    "primary_owner": "Neha Kulkarni",
+    "audience": "ALL_EMPLOYEES",
+    "source_authority": "L1 Directory + L2 Master Data",
+    "restricted_sections": []
+  },
+  {
+    "policy_id": "NST-ENG-GDE-001",
+    "title": "Engineering Development Workflow, Git & Code Review Guide",
+    "primary_owner": "Ananya Iyer",
+    "audience": "ALL_EMPLOYEES",
+    "source_authority": "L1 Directory + L2 Master Data",
+    "restricted_sections": []
+  },
+  {
+    "policy_id": "NST-DA-GDE-001",
+    "title": "Data Handling, Access & Analytics Delivery Guide",
+    "primary_owner": "Dev Patel",
+    "audience": "ALL_EMPLOYEES",
+    "source_authority": "L1 Directory + L2 Master Data",
+    "restricted_sections": []
+  },
+  {
+    "policy_id": "NST-FIN-POL-001",
+    "title": "Expense Reimbursement Policy",
+    "primary_owner": "Arjun Bhat",
+    "audience": "ALL_EMPLOYEES",
+    "source_authority": "L1 Directory + L2 Master Data",
+    "restricted_sections": [
+      "Finance Audit Controls and Fraud Detection Procedures (FINANCE_ONLY)"
+    ]
+  },
+  {
+    "policy_id": "NST-FIN-POL-002",
+    "title": "Business Travel & Travel Expense Policy",
+    "primary_owner": "Arjun Bhat",
+    "audience": "ALL_EMPLOYEES",
+    "source_authority": "L1 Directory + L2 Master Data",
+    "restricted_sections": []
+  },
+  {
+    "policy_id": "NST-IT-GDE-003",
+    "title": "IT Incident Management & Emergency Procedures",
+    "primary_owner": "Neha Kulkarni",
+    "audience": "ALL_EMPLOYEES",
+    "source_authority": "L1 Directory + L2 Master Data",
+    "restricted_sections": []
+  },
+  {
+    "policy_id": "CORP-001",
+    "title": "Company Overview & Employee Directory",
+    "primary_owner": "Ishita Rao",
+    "audience": "ALL_EMPLOYEES",
+    "source_authority": "L1 Directory + L2 Master Data",
+    "restricted_sections": []
+  }
+]

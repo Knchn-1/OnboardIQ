@@ -1,0 +1,67 @@
+{
+  "project": "OnboardIQ Northstar Knowledge Base",
+  "demonstration_label": "DEMONSTRATION ONLY \u2014 NOT APPROVED FOR REAL-WORLD USE",
+  "last_updated": "2026-11-07T23:45:46.835235",
+  "current_phase": "Phase 9 \u2014 Final corpus verification and README",
+  "corpus_verification_status": "PARTIALLY_VERIFIED",
+  "verified_scope": "CORPUS_LEVEL",
+  "phases": {
+    "Phase 0 \u2014 Bootstrap": {
+      "status": "VERIFIED",
+      "verified_scope": "DOCUMENT_LEVEL"
+    },
+    "Phase 1 \u2014 Source inspection and extraction": {
+      "status": "VERIFIED",
+      "verified_scope": "DOCUMENT_LEVEL"
+    },
+    "Phase 2 \u2014 Conflict, overlap and coverage analysis": {
+      "status": "VERIFIED",
+      "verified_scope": "DOCUMENT_LEVEL"
+    },
+    "Phase 3 \u2014 Company Master Data": {
+      "status": "VERIFIED",
+      "verified_scope": "DOCUMENT_LEVEL"
+    },
+    "Phase 4 \u2014 Document architecture and outlines": {
+      "status": "VERIFIED",
+      "verified_scope": "DOCUMENT_LEVEL"
+    },
+    "Phase 5 \u2014 Draft documents": {
+      "status": "VERIFIED",
+      "verified_scope": "DOCUMENT_LEVEL"
+    },
+    "Phase 6 \u2014 PDF generation and visual QA": {
+      "status": "PARTIALLY_VERIFIED",
+      "verified_scope": "DOCUMENT_LEVEL",
+      "note": "Rebuilt from source text via ReportLab 4.5.0; verified with PyMuPDF geometry and visual QA PNG rendering."
+    },
+    "Phase 7 \u2014 Registers and RAG metadata": {
+      "status": "VERIFIED",
+      "verified_scope": "CORPUS_LEVEL"
+    },
+    "Phase 8 \u2014 RAG evaluation dataset": {
+      "status": "VERIFIED",
+      "verified_scope": "CORPUS_LEVEL"
+    },
+    "Phase 9 \u2014 Final corpus verification and README": {
+      "status": "VERIFIED",
+      "verified_scope": "CORPUS_LEVEL"
+    }
+  },
+  "directory_integrity": {
+    "status": "UNRESOLVED_STRUCTURE",
+    "employee_count": 13,
+    "anomalies_detected": 7,
+    "note": "EMP-001 (CEO) department mismatch; reporting lines to unlisted CTO, COO, CFO roles."
+  },
+  "deliverable_counts": {
+    "source_files": 25,
+    "docx_documents": 15,
+    "pdf_documents": 15,
+    "visual_qa_images": 30,
+    "sections_indexed": 137,
+    "chunks_indexed": 139,
+    "authorizer_tests_passed": "16/16",
+    "rag_eval_questions": 95
+  }
+}

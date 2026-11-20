@@ -1,0 +1,102 @@
+[
+  {
+    "id": "LR-001",
+    "topic": "Retirement Age",
+    "statutory_area": "Employment / retirement",
+    "jurisdictions": [
+      "Maharashtra",
+      "Karnataka"
+    ],
+    "fictional_value": "60 years",
+    "note": "Statutory position to be verified by qualified legal/HR counsel before real-world use.",
+    "status": "PENDING_REVIEW",
+    "reviewer": "Qualified HR/Legal counsel"
+  },
+  {
+    "id": "LR-002",
+    "topic": "Leave Entitlements (CL/SL/EL)",
+    "statutory_area": "State Shops & Establishments Acts",
+    "jurisdictions": [
+      "Maharashtra",
+      "Karnataka"
+    ],
+    "fictional_value": "CL: 12, SL: 12, EL: 15 per year",
+    "note": "Statutory position to be verified by qualified legal/HR counsel before real-world use. Maharashtra and Karnataka may have different statutory minimums.",
+    "status": "PENDING_REVIEW",
+    "reviewer": "Qualified HR/Legal counsel"
+  },
+  {
+    "id": "LR-003",
+    "topic": "Maternity and Paternity Leave",
+    "statutory_area": "Maternity Benefit Act, 1961 / company policy",
+    "jurisdictions": [
+      "Central"
+    ],
+    "fictional_value": "Maternity: 26 weeks; Paternity: 5 days (company benefit, not statutory)",
+    "note": "Statutory position to be verified by qualified legal/HR counsel before real-world use.",
+    "status": "PENDING_REVIEW",
+    "reviewer": "Qualified HR/Legal counsel"
+  },
+  {
+    "id": "LR-004",
+    "topic": "Overtime Compensation",
+    "statutory_area": "Factories Act / Shops & Establishments Acts",
+    "jurisdictions": [
+      "Maharashtra",
+      "Karnataka"
+    ],
+    "fictional_value": "Comp-off only, no direct overtime pay by default",
+    "note": "Statutory position to be verified by qualified legal/HR counsel before real-world use. Statutory overtime rates may apply under specific Acts.",
+    "status": "PENDING_REVIEW",
+    "reviewer": "Qualified HR/Legal counsel"
+  },
+  {
+    "id": "LR-005",
+    "topic": "POSH (Prevention of Sexual Harassment)",
+    "statutory_area": "Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+    "jurisdictions": [
+      "Central"
+    ],
+    "fictional_value": "Internal Committee to be constituted",
+    "note": "Statutory position to be verified by qualified legal/HR counsel before real-world use.",
+    "status": "PENDING_REVIEW",
+    "reviewer": "Qualified HR/Legal counsel"
+  },
+  {
+    "id": "LR-006",
+    "topic": "Gratuity",
+    "statutory_area": "Payment of Gratuity Act, 1972",
+    "jurisdictions": [
+      "Central"
+    ],
+    "fictional_value": "Not detailed in current policies — to be addressed",
+    "note": "Statutory position to be verified by qualified legal/HR counsel before real-world use.",
+    "status": "PENDING_REVIEW",
+    "reviewer": "Qualified HR/Legal counsel"
+  },
+  {
+    "id": "LR-007",
+    "topic": "Data Protection and Privacy",
+    "statutory_area": "Digital Personal Data Protection Act, 2023 (India)",
+    "jurisdictions": [
+      "Central"
+    ],
+    "fictional_value": "Data classification levels defined; specific compliance obligations TBD",
+    "note": "Statutory position to be verified by qualified legal/HR counsel before real-world use.",
+    "status": "PENDING_REVIEW",
+    "reviewer": "Qualified Legal counsel"
+  },
+  {
+    "id": "LR-008",
+    "topic": "Working Hours and Weekly Rest",
+    "statutory_area": "Shops & Establishments Acts (state-specific)",
+    "jurisdictions": [
+      "Maharashtra",
+      "Karnataka"
+    ],
+    "fictional_value": "9 hours/day, 45 hours/week, Monday-Friday",
+    "note": "Statutory position to be verified by qualified legal/HR counsel before real-world use. Maharashtra and Karnataka shops acts may differ on maximum hours and rest day requirements.",
+    "status": "PENDING_REVIEW",
+    "reviewer": "Qualified HR/Legal counsel"
+  }
+]

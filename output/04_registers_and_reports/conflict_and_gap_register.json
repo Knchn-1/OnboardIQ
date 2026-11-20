@@ -1,0 +1,34 @@
+[
+  {
+    "conflict_id": "CONF-001",
+    "topic": "Unlisted C-Suite Executives (CTO, COO, CFO)",
+    "conflict_description": "Directory table 2 lists reporting lines to CTO, COO, and CFO, but no employees hold those titles.",
+    "resolution": "Preserved verbatim. Role holders marked UNASSIGNED. Documented under ANOM-002 to ANOM-007 as UNRESOLVED_STRUCTURE.",
+    "provenance": "DIR",
+    "status": "LOGGED"
+  },
+  {
+    "conflict_id": "CONF-002",
+    "topic": "Executive Leadership Department Classification",
+    "conflict_description": "Directory assigns EMP-001 (CEO) to department 'Executive Leadership', whereas specifications mandate exactly six departments.",
+    "resolution": "Treated as a corporate classification tag (EXEC), not a seventh department. CEO participates in corporate governance without creating a 7th operational department.",
+    "provenance": "FICTIONAL-DECISION",
+    "status": "LOGGED"
+  },
+  {
+    "conflict_id": "CONF-003",
+    "topic": "Outdated Software in IT Manual Template",
+    "conflict_description": "Source IT manual template references Internet Explorer, Windows 7, CD-ROMs, and BlackBerry devices.",
+    "resolution": "Discarded legacy technologies. Rewritten in original Northstar prose referencing modern enterprise standards (Ubuntu LTS, macOS, Windows 11, WireGuard VPN, Google Workspace, GitLab).",
+    "provenance": "FICTIONAL-DECISION",
+    "status": "RESOLVED"
+  },
+  {
+    "conflict_id": "CONF-004",
+    "topic": "US/Foreign Legal References in BetterJobs Templates",
+    "conflict_description": "Downloaded BetterJobs templates reference IRS, US Federal/State laws, and American leave terminology.",
+    "resolution": "Completely purged foreign references. Adapted to Indian IT-services enterprise context with INR (Rs.) and explicit statutory review flags for Indian legal frameworks.",
+    "provenance": "TEMPLATE-ADAPTED",
+    "status": "RESOLVED"
+  }
+]

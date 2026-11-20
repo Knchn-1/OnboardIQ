@@ -1,0 +1,714 @@
+[
+  {
+    "id": "DEC-001",
+    "topic": "Missing C-suite roles",
+    "question": "CTO, COO, CFO titles referenced as reporting managers but no employees listed",
+    "source_evidence": "Directory Table 2 — EMP-004, 006, 009, 011, 013 report to unlisted titles",
+    "options_considered": [
+      "Invent C-suite employees",
+      "Leave unassigned, flag hierarchy"
+    ],
+    "chosen": "Leave unassigned, flag hierarchy as UNRESOLVED_STRUCTURE",
+    "rationale": "Spec prohibits inventing employees not in Directory",
+    "provenance": "DIR",
+    "affected_docs": "All documents referencing org hierarchy",
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-002",
+    "topic": "POSH IC Chairperson",
+    "question": "Who chairs the Internal Committee?",
+    "source_evidence": "No POSH-related info in Directory",
+    "options_considered": [
+      "Assign to HR Head",
+      "Leave unassigned"
+    ],
+    "chosen": "Leave unassigned with functional mailbox posh.committee@northstar.example",
+    "rationale": "Sensitive statutory role; cannot be assigned without proper context",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-HR-POL-003"
+    ],
+    "legal_review": true,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-003",
+    "topic": "Information Security Officer",
+    "question": "Who is responsible for information security?",
+    "source_evidence": "IT Manager (EMP-004) manages IT including endpoint security per Directory",
+    "options_considered": [
+      "Assign to IT Manager",
+      "Create separate role"
+    ],
+    "chosen": "Assign dual-hat to IT Manager (EMP-004, Neha Kulkarni)",
+    "rationale": "Small company; IT Manager responsibilities include endpoint security per Directory",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-IT-POL-001",
+      "NST-IT-GDE-003"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-004",
+    "topic": "Probation and Notice Periods",
+    "question": "What are the probation and notice periods?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "3/6 month probation",
+      "30/60/90 day notice"
+    ],
+    "chosen": "6-month probation, 30-day notice (probation), 60-day notice (confirmed)",
+    "rationale": "Common in Indian IT industry",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-HR-POL-001"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-005",
+    "topic": "Retirement Age",
+    "question": "What is the company retirement age?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "58",
+      "60"
+    ],
+    "chosen": "60 years",
+    "rationale": "Common in Indian private sector",
+    "provenance": "STATUTORY-FLAGGED",
+    "affected_docs": [
+      "NST-HR-POL-001"
+    ],
+    "legal_review": true,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-006",
+    "topic": "Dress Code",
+    "question": "What is the dress code?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "Formal only",
+      "Business casual",
+      "No policy"
+    ],
+    "chosen": "Business casual, formal for client meetings",
+    "rationale": "Standard for Indian IT services companies",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-HR-POL-001",
+      "NST-HR-POL-003"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-007",
+    "topic": "Pay Cycle",
+    "question": "When is salary paid?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "Last working day",
+      "1st of next month"
+    ],
+    "chosen": "Last working day of each calendar month",
+    "rationale": "Standard practice",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-HR-POL-001"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-008",
+    "topic": "Leave Entitlements",
+    "question": "How many leave days per type?",
+    "source_evidence": "No source data; state acts vary",
+    "options_considered": [
+      "CL:7/SL:7/EL:12",
+      "CL:12/SL:12/EL:15"
+    ],
+    "chosen": "CL:12, SL:12, EL:15 per year, carry-forward 5 days, leave year Jan-Dec",
+    "rationale": "Generous but common in Indian IT; flagged for statutory review",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-HR-POL-002"
+    ],
+    "legal_review": true,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-009",
+    "topic": "Maternity/Paternity Leave",
+    "question": "What parental leave is offered?",
+    "source_evidence": "Maternity Benefit Act mandates 26 weeks",
+    "options_considered": [
+      "Statutory minimum only",
+      "Add paternity"
+    ],
+    "chosen": "26 weeks maternity, 5 days paternity (company benefit)",
+    "rationale": "Maternity as per Act; paternity is company benefit",
+    "provenance": "STATUTORY-FLAGGED",
+    "affected_docs": [
+      "NST-HR-POL-002"
+    ],
+    "legal_review": true,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-010",
+    "topic": "Bereavement and Comp-off",
+    "question": "Bereavement leave days? Comp-off validity?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "3 days",
+      "5 days"
+    ],
+    "chosen": "5 days bereavement, 30-day comp-off validity",
+    "rationale": "Reasonable for Indian IT",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-HR-POL-002"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-011",
+    "topic": "Leave Approval Chain",
+    "question": "Who approves leave?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "Manager only",
+      "Manager + HR for long leave"
+    ],
+    "chosen": "Manager for ≤3 days; Manager + HR for >3 consecutive days",
+    "rationale": "Balanced control",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-HR-POL-002"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-012",
+    "topic": "Attendance Rules",
+    "question": "Attendance marking and grace period?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "No grace",
+      "15-min grace"
+    ],
+    "chosen": "Daily HRMS marking by 10:30 AM, 15-min grace, 3-day unauthorized absence threshold",
+    "rationale": "Industry standard",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-HR-POL-002"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-013",
+    "topic": "Working Hours",
+    "question": "Standard working hours?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "8h/40h",
+      "9h/45h"
+    ],
+    "chosen": "9h/day (incl. 1h lunch), 45h/week, Mon-Fri, core 10AM-7PM, flex 9-10:30AM",
+    "rationale": "Common in Indian IT",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-HR-POL-002"
+    ],
+    "legal_review": true,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-014",
+    "topic": "Overtime Compensation",
+    "question": "How is overtime compensated?",
+    "source_evidence": "No source data; statutory provisions vary",
+    "options_considered": [
+      "Overtime pay",
+      "Comp-off only",
+      "Hybrid"
+    ],
+    "chosen": "Comp-off within 30 days; no direct overtime pay by default",
+    "rationale": "Common IT practice; flagged for statutory review",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-HR-POL-002"
+    ],
+    "legal_review": true,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-015",
+    "topic": "Remote Work Policy",
+    "question": "Remote work rules?",
+    "source_evidence": "Directory: 'Office-first with approved hybrid and remote'",
+    "options_considered": [
+      "1 day/week",
+      "2 days/week",
+      "3 days/week"
+    ],
+    "chosen": "Max 2 days/week remote for confirmed employees, manager-approved, full remote exceptional",
+    "rationale": "Aligns with Directory 'office-first' model",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-HR-POL-004"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-016",
+    "topic": "Expense Approval Thresholds",
+    "question": "Expense claim approval levels?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "Flat approval",
+      "Tiered"
+    ],
+    "chosen": "≤₹5K: Manager; ₹5K-₹25K: Dept Head + Finance; >₹25K: Dept Head + Finance + CEO",
+    "rationale": "Standard tiered control for SME",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-FIN-POL-001"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-017",
+    "topic": "Travel Approval",
+    "question": "Travel request approval?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "Manager only",
+      "Manager + Finance"
+    ],
+    "chosen": "Domestic: Manager + Finance; International: Dept Head + Finance + CEO",
+    "rationale": "Appropriate controls",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-FIN-POL-002"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-018",
+    "topic": "Software Purchase Approval",
+    "question": "Who approves software purchases?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "IT only",
+      "IT + Finance"
+    ],
+    "chosen": "≤₹10K: IT Manager; >₹10K: IT Manager + Finance Manager",
+    "rationale": "Dual control for significant purchases",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-IT-GDE-001"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-019",
+    "topic": "Hiring Approval",
+    "question": "Who approves new hires?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "Manager + HR",
+      "Manager + HR + CEO"
+    ],
+    "chosen": "Department Head + HR + CEO",
+    "rationale": "Small company; CEO visibility on all hires",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-HR-POL-005"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-020",
+    "topic": "Promotion Approval",
+    "question": "Who approves promotions?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "Manager + HR",
+      "Full chain"
+    ],
+    "chosen": "Manager + Dept Head + HR + CEO",
+    "rationale": "Ensures fairness and visibility",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-HR-POL-007"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-021",
+    "topic": "Policy Exception Process",
+    "question": "How are policy exceptions handled?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "Manager",
+      "Dept Head + HR + CEO"
+    ],
+    "chosen": "Department Head + HR + CEO",
+    "rationale": "Strict control for exceptions",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "All policies"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-022",
+    "topic": "Meal and Transport Allowances",
+    "question": "Daily meal and transport limits?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "₹300/₹500 meal",
+      "₹500/₹1000/₹1500 transport"
+    ],
+    "chosen": "₹500 daily meal, ₹1,500 local transport per trip, ₹500/month mobile",
+    "rationale": "Reasonable for Indian cities",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-FIN-POL-001"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-023",
+    "topic": "Expense Claim Deadlines",
+    "question": "Claim submission and processing timelines?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "15/30 days submission",
+      "7/15 days processing"
+    ],
+    "chosen": "30-day submission deadline, receipt >₹250, 15 working days processing",
+    "rationale": "Balanced for finance team capacity",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-FIN-POL-001"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-024",
+    "topic": "Travel Class and Hotel Limits",
+    "question": "Travel class and per-night hotel rates?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "Economy only",
+      "Tiered by distance"
+    ],
+    "chosen": "Economy (business >4h with approval), Hotel: ₹5K metro/₹3.5K non-metro, Diem: ₹1.5K/₹1K",
+    "rationale": "Reasonable for Indian IT SME",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-FIN-POL-002"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-025",
+    "topic": "Travel Advance and Settlement",
+    "question": "Travel advance and settlement rules?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "No advance",
+      "80% advance"
+    ],
+    "chosen": "80% advance max, 7-day advance request lead, 7 working days settlement deadline",
+    "rationale": "Standard practice",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-FIN-POL-002"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-026",
+    "topic": "Employee Referral Bonus",
+    "question": "Referral bonus amount and rules?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "₹10K",
+      "₹15K",
+      "₹25K"
+    ],
+    "chosen": "₹15,000 after 6-month completion, max 5 per quarter, HR/hiring managers excluded",
+    "rationale": "Moderate for mid-size IT company",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-HR-POL-005"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-027",
+    "topic": "Password Policy",
+    "question": "Password length, expiry, MFA?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "8-char/180-day",
+      "12-char/90-day"
+    ],
+    "chosen": "12-char minimum, 90-day expiry, MFA required for all systems",
+    "rationale": "Industry best practice",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-IT-POL-001"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-028",
+    "topic": "USB and BYOD Policy",
+    "question": "USB and personal device rules?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "Allow with logging",
+      "Disabled by default"
+    ],
+    "chosen": "USB disabled by default (IT exception), BYOD requires MDM enrollment",
+    "rationale": "Security-first approach",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-IT-POL-001"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-029",
+    "topic": "VPN Requirement",
+    "question": "VPN for remote work?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "Optional",
+      "Required"
+    ],
+    "chosen": "Required for all remote access",
+    "rationale": "Security best practice",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-IT-POL-001",
+      "NST-HR-POL-004"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-030",
+    "topic": "Data Classification",
+    "question": "Data classification levels?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "3-level",
+      "4-level"
+    ],
+    "chosen": "Public, Internal, Confidential, Restricted",
+    "rationale": "Industry standard 4-level model",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-IT-POL-001",
+      "NST-DA-GDE-001"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-031",
+    "topic": "Security Incident Reporting",
+    "question": "Incident reporting channel?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "Email",
+      "Dedicated tool"
+    ],
+    "chosen": "security@northstar.example, escalation IT Manager → HR → CEO",
+    "rationale": "Simple for small company",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-IT-POL-001",
+      "NST-IT-GDE-003"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-032",
+    "topic": "Incident SLA",
+    "question": "Response and resolution SLAs?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "Single SLA",
+      "Priority-based"
+    ],
+    "chosen": "P1: 30min/4h, P2: 1h/8h, P3: 4h/24h, P4: 8h/48h",
+    "rationale": "Standard ITIL-aligned SLAs",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-IT-GDE-003"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-033",
+    "topic": "Internal Systems and Tools",
+    "question": "Which tools does the company use?",
+    "source_evidence": "No source data",
+    "options_considered": [
+      "Minimal toolset",
+      "Full modern stack"
+    ],
+    "chosen": "HRMS, GitLab, Jira, Confluence, Slack, Google Workspace, VPN, Expense Portal",
+    "rationale": "Realistic stack for Indian IT SME",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-IT-GDE-001",
+      "NST-ENG-GDE-001"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-034",
+    "topic": "Restricted Unit: Disciplinary Procedures",
+    "question": "Should disciplinary action details be HR-only?",
+    "source_evidence": "Standard HR practice",
+    "options_considered": [
+      "All employees",
+      "HR only",
+      "Managers + HR"
+    ],
+    "chosen": "HR_ONLY",
+    "rationale": "Sensitive operational procedures",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-HR-POL-001"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-035",
+    "topic": "Restricted Unit: Security Incident Playbook",
+    "question": "Should incident response playbook be IT-only?",
+    "source_evidence": "Security best practice",
+    "options_considered": [
+      "All employees",
+      "IT only"
+    ],
+    "chosen": "IT_ONLY",
+    "rationale": "Adversarial knowledge risk",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-IT-POL-001"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-036",
+    "topic": "Restricted Unit: Finance Audit Controls",
+    "question": "Should fraud detection criteria be Finance-only?",
+    "source_evidence": "Internal control practice",
+    "options_considered": [
+      "All employees",
+      "Finance only"
+    ],
+    "chosen": "FINANCE_ONLY",
+    "rationale": "Protect control effectiveness",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "NST-FIN-POL-001"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  },
+  {
+    "id": "DEC-037",
+    "topic": "Executive Leadership classification",
+    "question": "Is Executive Leadership a 7th department?",
+    "source_evidence": "Directory: EMP-001 dept = 'Executive Leadership'; spec says exactly 6 depts",
+    "options_considered": [
+      "Make 7th dept",
+      "Classification tag"
+    ],
+    "chosen": "Classification tag only; not a department. EMP-001 is in GRP_ALL_EMPLOYEES but no department group.",
+    "rationale": "Spec mandates exactly 6 departments",
+    "provenance": "FICTIONAL-DECISION",
+    "affected_docs": [
+      "All documents"
+    ],
+    "legal_review": false,
+    "date": "2026-11-07",
+    "status": "FINAL"
+  }
+]

@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OnboardIQ Access Control Metadata Schema",
+  "description": "JSON Schema validating document, section, and chunk level access control metadata.",
+  "type": "object",
+  "required": [
+    "entity_id",
+    "entity_type",
+    "classification_audience",
+    "allowed_groups",
+    "lifecycle_state",
+    "access_policy_version",
+    "demonstration_label"
+  ],
+  "properties": {
+    "entity_id": {
+      "type": "string",
+      "pattern": "^(DOC|SEC|CHK)-[A-Z0-9-]+$"
+    },
+    "entity_type": {
+      "type": "string",
+      "enum": ["DOCUMENT", "SECTION", "CHUNK", "FILE"]
+    },
+    "policy_id": {
+      "type": "string",
+      "pattern": "^(NST-(HR|IT|ENG|DA|FIN|SCS)-(POL|GDE)-[0-9]{3}|CORP-001)$"
+    },
+    "classification_audience": {
+      "type": "string",
+      "enum": [
+        "ALL_EMPLOYEES",
+        "MANAGERS",
+        "MANAGERS_AND_HR",
+        "HR_ONLY",
+        "IT_ONLY",
+        "FINANCE_ONLY",
+        "ENGINEERING_ONLY",
+        "DA_ONLY",
+        "SALES_ONLY"
+      ]
+    },
+    "allowed_groups": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "GRP_ALL_EMPLOYEES",
+          "GRP_MANAGERS",
+          "GRP_DEPT_HR",
+          "GRP_DEPT_IT",
+          "GRP_DEPT_ENG",
+          "GRP_DEPT_DA",
+          "GRP_DEPT_FIN",
+          "GRP_DEPT_SCS"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "restricted_unit_id": {
+      "type": ["string", "null"],
+      "enum": ["RU-001", "RU-002", "RU-003", null]
+    },
+    "lifecycle_state": {
+      "type": "string",
+      "enum": ["CURRENT", "SUPERSEDED", "DRAFT"]
+    },
+    "access_policy_version": {
+      "type": "string",
+      "pattern": "^v[0-9]+\\.[0-9]+$"
+    },
+    "demonstration_label": {
+      "type": "string",
+      "const": "DEMONSTRATION ONLY — NOT APPROVED FOR REAL-WORLD USE"
+    }
+  },
+  "additionalProperties": true
+}
+

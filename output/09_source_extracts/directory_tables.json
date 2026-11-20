@@ -1,0 +1,246 @@
+[
+  {
+    "table_index": 0,
+    "row_count": 9,
+    "col_count": 2,
+    "rows": [
+      [
+        "Company name",
+        "Northstar Technologies"
+      ],
+      [
+        "Industry",
+        "Information Technology, Software Engineering and Data Services"
+      ],
+      [
+        "Head office",
+        "Nagpur, Maharashtra, India (fictional address/location)"
+      ],
+      [
+        "Other work locations",
+        "Pune and Bengaluru, India (fictional locations)"
+      ],
+      [
+        "Business model",
+        "Business-to-business software development and technology consulting"
+      ],
+      [
+        "Core services",
+        "Custom software development; web and API engineering; data analytics; cloud solutions; AI-enabled applications"
+      ],
+      [
+        "Working model",
+        "Office-first with approved hybrid and remote arrangements under the applicable policies"
+      ],
+      [
+        "Official website",
+        "https://northstar.example (reserved example domain; not a live website)"
+      ],
+      [
+        "General contact",
+        "hello@northstar.example (fictional email address; not monitored)"
+      ]
+    ]
+  },
+  {
+    "table_index": 1,
+    "row_count": 7,
+    "col_count": 2,
+    "rows": [
+      [
+        "Department",
+        "Primary responsibilities"
+      ],
+      [
+        "Human Resources (HR)",
+        "Recruitment, onboarding, employee records, leave administration, employee relations, learning and performance processes."
+      ],
+      [
+        "Information Technology (IT)",
+        "Employee devices and accounts, access provisioning, IT support, infrastructure, endpoint security and incident coordination."
+      ],
+      [
+        "Engineering",
+        "Software design and development, code review, testing, release processes, technical documentation and application maintenance."
+      ],
+      [
+        "Data & Analytics",
+        "Data engineering, data quality, reporting, analytics, machine learning and responsible use of data."
+      ],
+      [
+        "Finance & Administration",
+        "Budgets, invoices, expense verification, reimbursements, payroll coordination, travel administration and office facilities."
+      ],
+      [
+        "Sales & Customer Success",
+        "Customer discovery, proposals, account coordination, customer communication and service feedback."
+      ]
+    ]
+  },
+  {
+    "table_index": 2,
+    "row_count": 14,
+    "col_count": 6,
+    "rows": [
+      [
+        "Employee ID",
+        "Name",
+        "Job title",
+        "Department",
+        "Reports to",
+        "Email / Location"
+      ],
+      [
+        "EMP-001",
+        "Aarav Mehta",
+        "Chief Executive Officer",
+        "Executive Leadership",
+        "Board of Directors",
+        "aarav.mehta@northstar.example\nNagpur"
+      ],
+      [
+        "EMP-002",
+        "Ishita Rao",
+        "Head of Human Resources",
+        "Human Resources",
+        "Chief Executive Officer",
+        "ishita.rao@northstar.example\nNagpur"
+      ],
+      [
+        "EMP-003",
+        "Rohan Deshpande",
+        "HR Business Partner",
+        "Human Resources",
+        "Head of Human Resources",
+        "rohan.deshpande@northstar.example\nPune"
+      ],
+      [
+        "EMP-004",
+        "Neha Kulkarni",
+        "IT Manager",
+        "Information Technology",
+        "Chief Operating Officer",
+        "neha.kulkarni@northstar.example\nNagpur"
+      ],
+      [
+        "EMP-005",
+        "Kabir Shah",
+        "IT Support Specialist",
+        "Information Technology",
+        "IT Manager",
+        "kabir.shah@northstar.example\nNagpur"
+      ],
+      [
+        "EMP-006",
+        "Ananya Iyer",
+        "Engineering Manager",
+        "Engineering",
+        "Chief Technology Officer",
+        "ananya.iyer@northstar.example\nBengaluru"
+      ],
+      [
+        "EMP-007",
+        "Vikram Joshi",
+        "Senior Software Engineer",
+        "Engineering",
+        "Engineering Manager",
+        "vikram.joshi@northstar.example\nPune"
+      ],
+      [
+        "EMP-008",
+        "Mira Nair",
+        "Software Engineer",
+        "Engineering",
+        "Engineering Manager",
+        "mira.nair@northstar.example\nNagpur"
+      ],
+      [
+        "EMP-009",
+        "Dev Patel",
+        "Data & Analytics Manager",
+        "Data & Analytics",
+        "Chief Technology Officer",
+        "dev.patel@northstar.example\nBengaluru"
+      ],
+      [
+        "EMP-010",
+        "Sana Khan",
+        "Data Analyst",
+        "Data & Analytics",
+        "Data & Analytics Manager",
+        "sana.khan@northstar.example\nNagpur"
+      ],
+      [
+        "EMP-011",
+        "Arjun Bhat",
+        "Finance Manager",
+        "Finance & Administration",
+        "Chief Financial Officer",
+        "arjun.bhat@northstar.example\nPune"
+      ],
+      [
+        "EMP-012",
+        "Tara Menon",
+        "Travel & Administration Coordinator",
+        "Finance & Administration",
+        "Finance Manager",
+        "tara.menon@northstar.example\nNagpur"
+      ],
+      [
+        "EMP-013",
+        "Rahul Sethi",
+        "Customer Success Manager",
+        "Sales & Customer Success",
+        "Chief Operating Officer",
+        "rahul.sethi@northstar.example\nBengaluru"
+      ]
+    ]
+  },
+  {
+    "table_index": 3,
+    "row_count": 8,
+    "col_count": 3,
+    "rows": [
+      [
+        "Reason for contact",
+        "Team",
+        "Sample contact"
+      ],
+      [
+        "Recruitment, joining documents, employee records",
+        "Human Resources",
+        "ishita.rao@northstar.example"
+      ],
+      [
+        "Leave, attendance, workplace concerns",
+        "Human Resources",
+        "rohan.deshpande@northstar.example"
+      ],
+      [
+        "Laptop, email account, access or IT issue",
+        "Information Technology",
+        "kabir.shah@northstar.example"
+      ],
+      [
+        "Software development, code review or release workflow",
+        "Engineering",
+        "ananya.iyer@northstar.example"
+      ],
+      [
+        "Data platform, analytics or reporting questions",
+        "Data & Analytics",
+        "dev.patel@northstar.example"
+      ],
+      [
+        "Expense reimbursement, invoices or travel claims",
+        "Finance & Administration",
+        "arjun.bhat@northstar.example"
+      ],
+      [
+        "Customer account or service query",
+        "Sales & Customer Success",
+        "rahul.sethi@northstar.example"
+      ]
+    ]
+  }
+]

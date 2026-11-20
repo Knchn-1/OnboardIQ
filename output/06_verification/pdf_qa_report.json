@@ -1,0 +1,217 @@
+{
+  "generation_method": "REBUILT_FROM_SOURCE",
+  "tool": "ReportLab 4.5.0 + PyMuPDF 1.27.2.2",
+  "verification_status": "PARTIALLY_VERIFIED",
+  "documents": [
+    {
+      "document_name": "CORP-001_Company_Overview_Directory_v1.0.docx",
+      "pdf_name": "CORP-001_Company_Overview_Directory_v1.0.pdf",
+      "page_count": 4,
+      "word_count_approx": 945,
+      "blank_pages": 0,
+      "demonstration_banner_present": true,
+      "rendered_images": [
+        "CORP-001_Company_Overview_Directory_v1.0_p1.png",
+        "CORP-001_Company_Overview_Directory_v1.0_p4.png"
+      ],
+      "geometry_checks": "PASS (All pages standard A4, zero blank pages)",
+      "parity_note": "Rebuilt from source text with identical structure, headers, tables, and clauses; currency rendered as Rs. to guarantee glyph safety."
+    },
+    {
+      "document_name": "NST-DA-GDE-001_Data_Handling_Guide_v1.0.docx",
+      "pdf_name": "NST-DA-GDE-001_Data_Handling_Guide_v1.0.pdf",
+      "page_count": 2,
+      "word_count_approx": 590,
+      "blank_pages": 0,
+      "demonstration_banner_present": true,
+      "rendered_images": [
+        "NST-DA-GDE-001_Data_Handling_Guide_v1.0_p1.png",
+        "NST-DA-GDE-001_Data_Handling_Guide_v1.0_p2.png"
+      ],
+      "geometry_checks": "PASS (All pages standard A4, zero blank pages)",
+      "parity_note": "Rebuilt from source text with identical structure, headers, tables, and clauses; currency rendered as Rs. to guarantee glyph safety."
+    },
+    {
+      "document_name": "NST-ENG-GDE-001_Engineering_Workflow_v1.0.docx",
+      "pdf_name": "NST-ENG-GDE-001_Engineering_Workflow_v1.0.pdf",
+      "page_count": 2,
+      "word_count_approx": 630,
+      "blank_pages": 0,
+      "demonstration_banner_present": true,
+      "rendered_images": [
+        "NST-ENG-GDE-001_Engineering_Workflow_v1.0_p1.png",
+        "NST-ENG-GDE-001_Engineering_Workflow_v1.0_p2.png"
+      ],
+      "geometry_checks": "PASS (All pages standard A4, zero blank pages)",
+      "parity_note": "Rebuilt from source text with identical structure, headers, tables, and clauses; currency rendered as Rs. to guarantee glyph safety."
+    },
+    {
+      "document_name": "NST-FIN-POL-001_Expense_Reimbursement_v1.0.docx",
+      "pdf_name": "NST-FIN-POL-001_Expense_Reimbursement_v1.0.pdf",
+      "page_count": 3,
+      "word_count_approx": 747,
+      "blank_pages": 0,
+      "demonstration_banner_present": true,
+      "rendered_images": [
+        "NST-FIN-POL-001_Expense_Reimbursement_v1.0_p1.png",
+        "NST-FIN-POL-001_Expense_Reimbursement_v1.0_p3.png"
+      ],
+      "geometry_checks": "PASS (All pages standard A4, zero blank pages)",
+      "parity_note": "Rebuilt from source text with identical structure, headers, tables, and clauses; currency rendered as Rs. to guarantee glyph safety."
+    },
+    {
+      "document_name": "NST-FIN-POL-002_Business_Travel_Policy_v1.0.docx",
+      "pdf_name": "NST-FIN-POL-002_Business_Travel_Policy_v1.0.pdf",
+      "page_count": 2,
+      "word_count_approx": 685,
+      "blank_pages": 0,
+      "demonstration_banner_present": true,
+      "rendered_images": [
+        "NST-FIN-POL-002_Business_Travel_Policy_v1.0_p1.png",
+        "NST-FIN-POL-002_Business_Travel_Policy_v1.0_p2.png"
+      ],
+      "geometry_checks": "PASS (All pages standard A4, zero blank pages)",
+      "parity_note": "Rebuilt from source text with identical structure, headers, tables, and clauses; currency rendered as Rs. to guarantee glyph safety."
+    },
+    {
+      "document_name": "NST-HR-POL-001_Employee_Handbook_v1.0.docx",
+      "pdf_name": "NST-HR-POL-001_Employee_Handbook_v1.0.pdf",
+      "page_count": 4,
+      "word_count_approx": 1489,
+      "blank_pages": 0,
+      "demonstration_banner_present": true,
+      "rendered_images": [
+        "NST-HR-POL-001_Employee_Handbook_v1.0_p1.png",
+        "NST-HR-POL-001_Employee_Handbook_v1.0_p4.png"
+      ],
+      "geometry_checks": "PASS (All pages standard A4, zero blank pages)",
+      "parity_note": "Rebuilt from source text with identical structure, headers, tables, and clauses; currency rendered as Rs. to guarantee glyph safety."
+    },
+    {
+      "document_name": "NST-HR-POL-002_Leave_Attendance_Working_Hours_v1.0.docx",
+      "pdf_name": "NST-HR-POL-002_Leave_Attendance_Working_Hours_v1.0.pdf",
+      "page_count": 4,
+      "word_count_approx": 1213,
+      "blank_pages": 0,
+      "demonstration_banner_present": true,
+      "rendered_images": [
+        "NST-HR-POL-002_Leave_Attendance_Working_Hours_v1.0_p1.png",
+        "NST-HR-POL-002_Leave_Attendance_Working_Hours_v1.0_p4.png"
+      ],
+      "geometry_checks": "PASS (All pages standard A4, zero blank pages)",
+      "parity_note": "Rebuilt from source text with identical structure, headers, tables, and clauses; currency rendered as Rs. to guarantee glyph safety."
+    },
+    {
+      "document_name": "NST-HR-POL-003_Code_of_Conduct_v1.0.docx",
+      "pdf_name": "NST-HR-POL-003_Code_of_Conduct_v1.0.pdf",
+      "page_count": 3,
+      "word_count_approx": 1000,
+      "blank_pages": 0,
+      "demonstration_banner_present": true,
+      "rendered_images": [
+        "NST-HR-POL-003_Code_of_Conduct_v1.0_p1.png",
+        "NST-HR-POL-003_Code_of_Conduct_v1.0_p3.png"
+      ],
+      "geometry_checks": "PASS (All pages standard A4, zero blank pages)",
+      "parity_note": "Rebuilt from source text with identical structure, headers, tables, and clauses; currency rendered as Rs. to guarantee glyph safety."
+    },
+    {
+      "document_name": "NST-HR-POL-004_Remote_Work_WFH_v1.0.docx",
+      "pdf_name": "NST-HR-POL-004_Remote_Work_WFH_v1.0.pdf",
+      "page_count": 2,
+      "word_count_approx": 656,
+      "blank_pages": 0,
+      "demonstration_banner_present": true,
+      "rendered_images": [
+        "NST-HR-POL-004_Remote_Work_WFH_v1.0_p1.png",
+        "NST-HR-POL-004_Remote_Work_WFH_v1.0_p2.png"
+      ],
+      "geometry_checks": "PASS (All pages standard A4, zero blank pages)",
+      "parity_note": "Rebuilt from source text with identical structure, headers, tables, and clauses; currency rendered as Rs. to guarantee glyph safety."
+    },
+    {
+      "document_name": "NST-HR-POL-005_Recruitment_Referral_v1.0.docx",
+      "pdf_name": "NST-HR-POL-005_Recruitment_Referral_v1.0.pdf",
+      "page_count": 2,
+      "word_count_approx": 655,
+      "blank_pages": 0,
+      "demonstration_banner_present": true,
+      "rendered_images": [
+        "NST-HR-POL-005_Recruitment_Referral_v1.0_p1.png",
+        "NST-HR-POL-005_Recruitment_Referral_v1.0_p2.png"
+      ],
+      "geometry_checks": "PASS (All pages standard A4, zero blank pages)",
+      "parity_note": "Rebuilt from source text with identical structure, headers, tables, and clauses; currency rendered as Rs. to guarantee glyph safety."
+    },
+    {
+      "document_name": "NST-HR-POL-006_Onboarding_Development_v1.0.docx",
+      "pdf_name": "NST-HR-POL-006_Onboarding_Development_v1.0.pdf",
+      "page_count": 2,
+      "word_count_approx": 622,
+      "blank_pages": 0,
+      "demonstration_banner_present": true,
+      "rendered_images": [
+        "NST-HR-POL-006_Onboarding_Development_v1.0_p1.png",
+        "NST-HR-POL-006_Onboarding_Development_v1.0_p2.png"
+      ],
+      "geometry_checks": "PASS (All pages standard A4, zero blank pages)",
+      "parity_note": "Rebuilt from source text with identical structure, headers, tables, and clauses; currency rendered as Rs. to guarantee glyph safety."
+    },
+    {
+      "document_name": "NST-HR-POL-007_Performance_Promotion_v1.0.docx",
+      "pdf_name": "NST-HR-POL-007_Performance_Promotion_v1.0.pdf",
+      "page_count": 2,
+      "word_count_approx": 601,
+      "blank_pages": 0,
+      "demonstration_banner_present": true,
+      "rendered_images": [
+        "NST-HR-POL-007_Performance_Promotion_v1.0_p1.png",
+        "NST-HR-POL-007_Performance_Promotion_v1.0_p2.png"
+      ],
+      "geometry_checks": "PASS (All pages standard A4, zero blank pages)",
+      "parity_note": "Rebuilt from source text with identical structure, headers, tables, and clauses; currency rendered as Rs. to guarantee glyph safety."
+    },
+    {
+      "document_name": "NST-IT-GDE-001_Laptop_Software_Setup_v1.0.docx",
+      "pdf_name": "NST-IT-GDE-001_Laptop_Software_Setup_v1.0.pdf",
+      "page_count": 2,
+      "word_count_approx": 628,
+      "blank_pages": 0,
+      "demonstration_banner_present": true,
+      "rendered_images": [
+        "NST-IT-GDE-001_Laptop_Software_Setup_v1.0_p1.png",
+        "NST-IT-GDE-001_Laptop_Software_Setup_v1.0_p2.png"
+      ],
+      "geometry_checks": "PASS (All pages standard A4, zero blank pages)",
+      "parity_note": "Rebuilt from source text with identical structure, headers, tables, and clauses; currency rendered as Rs. to guarantee glyph safety."
+    },
+    {
+      "document_name": "NST-IT-GDE-003_IT_Incident_Management_v1.0.docx",
+      "pdf_name": "NST-IT-GDE-003_IT_Incident_Management_v1.0.pdf",
+      "page_count": 2,
+      "word_count_approx": 564,
+      "blank_pages": 0,
+      "demonstration_banner_present": true,
+      "rendered_images": [
+        "NST-IT-GDE-003_IT_Incident_Management_v1.0_p1.png",
+        "NST-IT-GDE-003_IT_Incident_Management_v1.0_p2.png"
+      ],
+      "geometry_checks": "PASS (All pages standard A4, zero blank pages)",
+      "parity_note": "Rebuilt from source text with identical structure, headers, tables, and clauses; currency rendered as Rs. to guarantee glyph safety."
+    },
+    {
+      "document_name": "NST-IT-POL-001_InfoSec_Acceptable_Use_v1.0.docx",
+      "pdf_name": "NST-IT-POL-001_InfoSec_Acceptable_Use_v1.0.pdf",
+      "page_count": 3,
+      "word_count_approx": 894,
+      "blank_pages": 0,
+      "demonstration_banner_present": true,
+      "rendered_images": [
+        "NST-IT-POL-001_InfoSec_Acceptable_Use_v1.0_p1.png",
+        "NST-IT-POL-001_InfoSec_Acceptable_Use_v1.0_p3.png"
+      ],
+      "geometry_checks": "PASS (All pages standard A4, zero blank pages)",
+      "parity_note": "Rebuilt from source text with identical structure, headers, tables, and clauses; currency rendered as Rs. to guarantee glyph safety."
+    }
+  ]
+}

@@ -1,0 +1,734 @@
+{
+  "directory_integrity_status": "UNRESOLVED_STRUCTURE",
+  "employee_count": 13,
+  "department_count_in_table": 6,
+  "canonical_department_count": 6,
+  "anomaly_count": 7,
+  "anomalies": [
+    {
+      "anomaly_id": "ANOM-001",
+      "category": "DEPARTMENT_MISMATCH",
+      "severity": "MEDIUM",
+      "affected_employees": [
+        "EMP-001"
+      ],
+      "description": "EMP-001 (Aarav Mehta, CEO) has department \"Executive Leadership\" which is not one of the 6 canonical departments (HR, IT, ENG, DA, FIN, SCS).",
+      "evidence": "Directory Table 2, row for EMP-001: Department = \"Executive Leadership\".",
+      "proposed_resolution": "Record as anomaly. The CEO role is above the 6 departments. Do not force into a department. Use \"Executive Leadership\" as a classification tag, not a 7th department. Log this in Decision Log.",
+      "status": "PROPOSED, awaiting human approval"
+    },
+    {
+      "anomaly_id": "ANOM-002",
+      "category": "MISSING_MANAGER",
+      "severity": "HIGH",
+      "affected_employees": [
+        "EMP-004"
+      ],
+      "description": "EMP-004 (Neha Kulkarni) reports to \"Chief Operating Officer\" but no employee with that title exists in the directory.",
+      "evidence": "Directory Table 2: EMP-004 Reports to = \"Chief Operating Officer\". No row has Job title = \"Chief Operating Officer\".",
+      "proposed_resolution": "Record as unresolved. The \"Chief Operating Officer\" role exists but the person is not listed in the directory. Flag hierarchy as UNRESOLVED_STRUCTURE.",
+      "status": "PROPOSED, awaiting human approval"
+    },
+    {
+      "anomaly_id": "ANOM-003",
+      "category": "MISSING_MANAGER",
+      "severity": "HIGH",
+      "affected_employees": [
+        "EMP-006"
+      ],
+      "description": "EMP-006 (Ananya Iyer) reports to \"Chief Technology Officer\" but no employee with that title exists in the directory.",
+      "evidence": "Directory Table 2: EMP-006 Reports to = \"Chief Technology Officer\". No row has Job title = \"Chief Technology Officer\".",
+      "proposed_resolution": "Record as unresolved. The \"Chief Technology Officer\" role exists but the person is not listed in the directory. Flag hierarchy as UNRESOLVED_STRUCTURE.",
+      "status": "PROPOSED, awaiting human approval"
+    },
+    {
+      "anomaly_id": "ANOM-004",
+      "category": "MISSING_MANAGER",
+      "severity": "HIGH",
+      "affected_employees": [
+        "EMP-009"
+      ],
+      "description": "EMP-009 (Dev Patel) reports to \"Chief Technology Officer\" but no employee with that title exists in the directory.",
+      "evidence": "Directory Table 2: EMP-009 Reports to = \"Chief Technology Officer\". No row has Job title = \"Chief Technology Officer\".",
+      "proposed_resolution": "Record as unresolved. The \"Chief Technology Officer\" role exists but the person is not listed in the directory. Flag hierarchy as UNRESOLVED_STRUCTURE.",
+      "status": "PROPOSED, awaiting human approval"
+    },
+    {
+      "anomaly_id": "ANOM-005",
+      "category": "MISSING_MANAGER",
+      "severity": "HIGH",
+      "affected_employees": [
+        "EMP-011"
+      ],
+      "description": "EMP-011 (Arjun Bhat) reports to \"Chief Financial Officer\" but no employee with that title exists in the directory.",
+      "evidence": "Directory Table 2: EMP-011 Reports to = \"Chief Financial Officer\". No row has Job title = \"Chief Financial Officer\".",
+      "proposed_resolution": "Record as unresolved. The \"Chief Financial Officer\" role exists but the person is not listed in the directory. Flag hierarchy as UNRESOLVED_STRUCTURE.",
+      "status": "PROPOSED, awaiting human approval"
+    },
+    {
+      "anomaly_id": "ANOM-006",
+      "category": "MISSING_MANAGER",
+      "severity": "HIGH",
+      "affected_employees": [
+        "EMP-013"
+      ],
+      "description": "EMP-013 (Rahul Sethi) reports to \"Chief Operating Officer\" but no employee with that title exists in the directory.",
+      "evidence": "Directory Table 2: EMP-013 Reports to = \"Chief Operating Officer\". No row has Job title = \"Chief Operating Officer\".",
+      "proposed_resolution": "Record as unresolved. The \"Chief Operating Officer\" role exists but the person is not listed in the directory. Flag hierarchy as UNRESOLVED_STRUCTURE.",
+      "status": "PROPOSED, awaiting human approval"
+    },
+    {
+      "anomaly_id": "ANOM-007",
+      "category": "ORPHANED_EMPLOYEES",
+      "severity": "HIGH",
+      "affected_employees": [
+        "EMP-004",
+        "EMP-006",
+        "EMP-009",
+        "EMP-011",
+        "EMP-013"
+      ],
+      "description": "5 employees have no resolvable manager in the directory (their manager title does not match any listed employee).",
+      "evidence": "Orphaned: EMP-004, EMP-006, EMP-009, EMP-011, EMP-013 — their Reports to titles point to unlisted CTO/COO/CFO roles.",
+      "proposed_resolution": "The directory omits C-suite roles (CTO, COO, CFO). Hierarchy is incomplete. Mark as UNRESOLVED_STRUCTURE.",
+      "status": "PROPOSED, awaiting human approval"
+    }
+  ],
+  "company_profile": {
+    "Company name": "Northstar Technologies",
+    "Industry": "Information Technology, Software Engineering and Data Services",
+    "Head office": "Nagpur, Maharashtra, India (fictional address/location)",
+    "Other work locations": "Pune and Bengaluru, India (fictional locations)",
+    "Business model": "Business-to-business software development and technology consulting",
+    "Core services": "Custom software development; web and API engineering; data analytics; cloud solutions; AI-enabled applications",
+    "Working model": "Office-first with approved hybrid and remote arrangements under the applicable policies",
+    "Official website": "https://northstar.example (reserved example domain; not a live website)",
+    "General contact": "hello@northstar.example (fictional email address; not monitored)"
+  },
+  "departments": [
+    {
+      "name": "Human Resources (HR)",
+      "responsibilities": "Recruitment, onboarding, employee records, leave administration, employee relations, learning and performance processes."
+    },
+    {
+      "name": "Information Technology (IT)",
+      "responsibilities": "Employee devices and accounts, access provisioning, IT support, infrastructure, endpoint security and incident coordination."
+    },
+    {
+      "name": "Engineering",
+      "responsibilities": "Software design and development, code review, testing, release processes, technical documentation and application maintenance."
+    },
+    {
+      "name": "Data & Analytics",
+      "responsibilities": "Data engineering, data quality, reporting, analytics, machine learning and responsible use of data."
+    },
+    {
+      "name": "Finance & Administration",
+      "responsibilities": "Budgets, invoices, expense verification, reimbursements, payroll coordination, travel administration and office facilities."
+    },
+    {
+      "name": "Sales & Customer Success",
+      "responsibilities": "Customer discovery, proposals, account coordination, customer communication and service feedback."
+    }
+  ],
+  "employees_source": [
+    {
+      "Employee ID": "EMP-001",
+      "Name": "Aarav Mehta",
+      "Job title": "Chief Executive Officer",
+      "Department": "Executive Leadership",
+      "Reports to": "Board of Directors",
+      "Email / Location": "aarav.mehta@northstar.example\nNagpur",
+      "_provenance": "DIR"
+    },
+    {
+      "Employee ID": "EMP-002",
+      "Name": "Ishita Rao",
+      "Job title": "Head of Human Resources",
+      "Department": "Human Resources",
+      "Reports to": "Chief Executive Officer",
+      "Email / Location": "ishita.rao@northstar.example\nNagpur",
+      "_provenance": "DIR"
+    },
+    {
+      "Employee ID": "EMP-003",
+      "Name": "Rohan Deshpande",
+      "Job title": "HR Business Partner",
+      "Department": "Human Resources",
+      "Reports to": "Head of Human Resources",
+      "Email / Location": "rohan.deshpande@northstar.example\nPune",
+      "_provenance": "DIR"
+    },
+    {
+      "Employee ID": "EMP-004",
+      "Name": "Neha Kulkarni",
+      "Job title": "IT Manager",
+      "Department": "Information Technology",
+      "Reports to": "Chief Operating Officer",
+      "Email / Location": "neha.kulkarni@northstar.example\nNagpur",
+      "_provenance": "DIR"
+    },
+    {
+      "Employee ID": "EMP-005",
+      "Name": "Kabir Shah",
+      "Job title": "IT Support Specialist",
+      "Department": "Information Technology",
+      "Reports to": "IT Manager",
+      "Email / Location": "kabir.shah@northstar.example\nNagpur",
+      "_provenance": "DIR"
+    },
+    {
+      "Employee ID": "EMP-006",
+      "Name": "Ananya Iyer",
+      "Job title": "Engineering Manager",
+      "Department": "Engineering",
+      "Reports to": "Chief Technology Officer",
+      "Email / Location": "ananya.iyer@northstar.example\nBengaluru",
+      "_provenance": "DIR"
+    },
+    {
+      "Employee ID": "EMP-007",
+      "Name": "Vikram Joshi",
+      "Job title": "Senior Software Engineer",
+      "Department": "Engineering",
+      "Reports to": "Engineering Manager",
+      "Email / Location": "vikram.joshi@northstar.example\nPune",
+      "_provenance": "DIR"
+    },
+    {
+      "Employee ID": "EMP-008",
+      "Name": "Mira Nair",
+      "Job title": "Software Engineer",
+      "Department": "Engineering",
+      "Reports to": "Engineering Manager",
+      "Email / Location": "mira.nair@northstar.example\nNagpur",
+      "_provenance": "DIR"
+    },
+    {
+      "Employee ID": "EMP-009",
+      "Name": "Dev Patel",
+      "Job title": "Data & Analytics Manager",
+      "Department": "Data & Analytics",
+      "Reports to": "Chief Technology Officer",
+      "Email / Location": "dev.patel@northstar.example\nBengaluru",
+      "_provenance": "DIR"
+    },
+    {
+      "Employee ID": "EMP-010",
+      "Name": "Sana Khan",
+      "Job title": "Data Analyst",
+      "Department": "Data & Analytics",
+      "Reports to": "Data & Analytics Manager",
+      "Email / Location": "sana.khan@northstar.example\nNagpur",
+      "_provenance": "DIR"
+    },
+    {
+      "Employee ID": "EMP-011",
+      "Name": "Arjun Bhat",
+      "Job title": "Finance Manager",
+      "Department": "Finance & Administration",
+      "Reports to": "Chief Financial Officer",
+      "Email / Location": "arjun.bhat@northstar.example\nPune",
+      "_provenance": "DIR"
+    },
+    {
+      "Employee ID": "EMP-012",
+      "Name": "Tara Menon",
+      "Job title": "Travel & Administration Coordinator",
+      "Department": "Finance & Administration",
+      "Reports to": "Finance Manager",
+      "Email / Location": "tara.menon@northstar.example\nNagpur",
+      "_provenance": "DIR"
+    },
+    {
+      "Employee ID": "EMP-013",
+      "Name": "Rahul Sethi",
+      "Job title": "Customer Success Manager",
+      "Department": "Sales & Customer Success",
+      "Reports to": "Chief Operating Officer",
+      "Email / Location": "rahul.sethi@northstar.example\nBengaluru",
+      "_provenance": "DIR"
+    }
+  ],
+  "employees_derived": [
+    {
+      "employee_id": "EMP-001",
+      "full_name": "Aarav Mehta",
+      "first_name": "Aarav",
+      "last_name": "Mehta",
+      "job_title": "Chief Executive Officer",
+      "department_full": "Executive Leadership",
+      "department_code": "EXEC",
+      "reports_to_title": "Board of Directors",
+      "reports_to_emp_id": null,
+      "email": "aarav.mehta@northstar.example",
+      "location": "Nagpur",
+      "is_manager": true,
+      "direct_report_ids": [
+        "EMP-002"
+      ],
+      "direct_report_count": 1,
+      "_provenance": "DIR (derived)"
+    },
+    {
+      "employee_id": "EMP-002",
+      "full_name": "Ishita Rao",
+      "first_name": "Ishita",
+      "last_name": "Rao",
+      "job_title": "Head of Human Resources",
+      "department_full": "Human Resources",
+      "department_code": "HR",
+      "reports_to_title": "Chief Executive Officer",
+      "reports_to_emp_id": "EMP-001",
+      "email": "ishita.rao@northstar.example",
+      "location": "Nagpur",
+      "is_manager": true,
+      "direct_report_ids": [
+        "EMP-003"
+      ],
+      "direct_report_count": 1,
+      "_provenance": "DIR (derived)"
+    },
+    {
+      "employee_id": "EMP-003",
+      "full_name": "Rohan Deshpande",
+      "first_name": "Rohan",
+      "last_name": "Deshpande",
+      "job_title": "HR Business Partner",
+      "department_full": "Human Resources",
+      "department_code": "HR",
+      "reports_to_title": "Head of Human Resources",
+      "reports_to_emp_id": "EMP-002",
+      "email": "rohan.deshpande@northstar.example",
+      "location": "Pune",
+      "is_manager": false,
+      "direct_report_ids": [],
+      "direct_report_count": 0,
+      "_provenance": "DIR (derived)"
+    },
+    {
+      "employee_id": "EMP-004",
+      "full_name": "Neha Kulkarni",
+      "first_name": "Neha",
+      "last_name": "Kulkarni",
+      "job_title": "IT Manager",
+      "department_full": "Information Technology",
+      "department_code": "IT",
+      "reports_to_title": "Chief Operating Officer",
+      "reports_to_emp_id": null,
+      "email": "neha.kulkarni@northstar.example",
+      "location": "Nagpur",
+      "is_manager": true,
+      "direct_report_ids": [
+        "EMP-005"
+      ],
+      "direct_report_count": 1,
+      "_provenance": "DIR (derived)"
+    },
+    {
+      "employee_id": "EMP-005",
+      "full_name": "Kabir Shah",
+      "first_name": "Kabir",
+      "last_name": "Shah",
+      "job_title": "IT Support Specialist",
+      "department_full": "Information Technology",
+      "department_code": "IT",
+      "reports_to_title": "IT Manager",
+      "reports_to_emp_id": "EMP-004",
+      "email": "kabir.shah@northstar.example",
+      "location": "Nagpur",
+      "is_manager": false,
+      "direct_report_ids": [],
+      "direct_report_count": 0,
+      "_provenance": "DIR (derived)"
+    },
+    {
+      "employee_id": "EMP-006",
+      "full_name": "Ananya Iyer",
+      "first_name": "Ananya",
+      "last_name": "Iyer",
+      "job_title": "Engineering Manager",
+      "department_full": "Engineering",
+      "department_code": "ENG",
+      "reports_to_title": "Chief Technology Officer",
+      "reports_to_emp_id": null,
+      "email": "ananya.iyer@northstar.example",
+      "location": "Bengaluru",
+      "is_manager": true,
+      "direct_report_ids": [
+        "EMP-007",
+        "EMP-008"
+      ],
+      "direct_report_count": 2,
+      "_provenance": "DIR (derived)"
+    },
+    {
+      "employee_id": "EMP-007",
+      "full_name": "Vikram Joshi",
+      "first_name": "Vikram",
+      "last_name": "Joshi",
+      "job_title": "Senior Software Engineer",
+      "department_full": "Engineering",
+      "department_code": "ENG",
+      "reports_to_title": "Engineering Manager",
+      "reports_to_emp_id": "EMP-006",
+      "email": "vikram.joshi@northstar.example",
+      "location": "Pune",
+      "is_manager": false,
+      "direct_report_ids": [],
+      "direct_report_count": 0,
+      "_provenance": "DIR (derived)"
+    },
+    {
+      "employee_id": "EMP-008",
+      "full_name": "Mira Nair",
+      "first_name": "Mira",
+      "last_name": "Nair",
+      "job_title": "Software Engineer",
+      "department_full": "Engineering",
+      "department_code": "ENG",
+      "reports_to_title": "Engineering Manager",
+      "reports_to_emp_id": "EMP-006",
+      "email": "mira.nair@northstar.example",
+      "location": "Nagpur",
+      "is_manager": false,
+      "direct_report_ids": [],
+      "direct_report_count": 0,
+      "_provenance": "DIR (derived)"
+    },
+    {
+      "employee_id": "EMP-009",
+      "full_name": "Dev Patel",
+      "first_name": "Dev",
+      "last_name": "Patel",
+      "job_title": "Data & Analytics Manager",
+      "department_full": "Data & Analytics",
+      "department_code": "DA",
+      "reports_to_title": "Chief Technology Officer",
+      "reports_to_emp_id": null,
+      "email": "dev.patel@northstar.example",
+      "location": "Bengaluru",
+      "is_manager": true,
+      "direct_report_ids": [
+        "EMP-010"
+      ],
+      "direct_report_count": 1,
+      "_provenance": "DIR (derived)"
+    },
+    {
+      "employee_id": "EMP-010",
+      "full_name": "Sana Khan",
+      "first_name": "Sana",
+      "last_name": "Khan",
+      "job_title": "Data Analyst",
+      "department_full": "Data & Analytics",
+      "department_code": "DA",
+      "reports_to_title": "Data & Analytics Manager",
+      "reports_to_emp_id": "EMP-009",
+      "email": "sana.khan@northstar.example",
+      "location": "Nagpur",
+      "is_manager": false,
+      "direct_report_ids": [],
+      "direct_report_count": 0,
+      "_provenance": "DIR (derived)"
+    },
+    {
+      "employee_id": "EMP-011",
+      "full_name": "Arjun Bhat",
+      "first_name": "Arjun",
+      "last_name": "Bhat",
+      "job_title": "Finance Manager",
+      "department_full": "Finance & Administration",
+      "department_code": "FIN",
+      "reports_to_title": "Chief Financial Officer",
+      "reports_to_emp_id": null,
+      "email": "arjun.bhat@northstar.example",
+      "location": "Pune",
+      "is_manager": true,
+      "direct_report_ids": [
+        "EMP-012"
+      ],
+      "direct_report_count": 1,
+      "_provenance": "DIR (derived)"
+    },
+    {
+      "employee_id": "EMP-012",
+      "full_name": "Tara Menon",
+      "first_name": "Tara",
+      "last_name": "Menon",
+      "job_title": "Travel & Administration Coordinator",
+      "department_full": "Finance & Administration",
+      "department_code": "FIN",
+      "reports_to_title": "Finance Manager",
+      "reports_to_emp_id": "EMP-011",
+      "email": "tara.menon@northstar.example",
+      "location": "Nagpur",
+      "is_manager": false,
+      "direct_report_ids": [],
+      "direct_report_count": 0,
+      "_provenance": "DIR (derived)"
+    },
+    {
+      "employee_id": "EMP-013",
+      "full_name": "Rahul Sethi",
+      "first_name": "Rahul",
+      "last_name": "Sethi",
+      "job_title": "Customer Success Manager",
+      "department_full": "Sales & Customer Success",
+      "department_code": "SCS",
+      "reports_to_title": "Chief Operating Officer",
+      "reports_to_emp_id": null,
+      "email": "rahul.sethi@northstar.example",
+      "location": "Bengaluru",
+      "is_manager": false,
+      "direct_report_ids": [],
+      "direct_report_count": 0,
+      "_provenance": "DIR (derived)"
+    }
+  ],
+  "hierarchy": {
+    "EMP-001": {
+      "name": "Aarav Mehta",
+      "title": "Chief Executive Officer",
+      "department": "Executive Leadership",
+      "reports_to_title": "Board of Directors",
+      "reports_to_emp_id": null,
+      "direct_reports": [
+        "EMP-002"
+      ],
+      "location": "Nagpur",
+      "email": "aarav.mehta@northstar.example"
+    },
+    "EMP-002": {
+      "name": "Ishita Rao",
+      "title": "Head of Human Resources",
+      "department": "Human Resources",
+      "reports_to_title": "Chief Executive Officer",
+      "reports_to_emp_id": "EMP-001",
+      "direct_reports": [
+        "EMP-003"
+      ],
+      "location": "Nagpur",
+      "email": "ishita.rao@northstar.example"
+    },
+    "EMP-003": {
+      "name": "Rohan Deshpande",
+      "title": "HR Business Partner",
+      "department": "Human Resources",
+      "reports_to_title": "Head of Human Resources",
+      "reports_to_emp_id": "EMP-002",
+      "direct_reports": [],
+      "location": "Pune",
+      "email": "rohan.deshpande@northstar.example"
+    },
+    "EMP-004": {
+      "name": "Neha Kulkarni",
+      "title": "IT Manager",
+      "department": "Information Technology",
+      "reports_to_title": "Chief Operating Officer",
+      "reports_to_emp_id": null,
+      "direct_reports": [
+        "EMP-005"
+      ],
+      "location": "Nagpur",
+      "email": "neha.kulkarni@northstar.example"
+    },
+    "EMP-005": {
+      "name": "Kabir Shah",
+      "title": "IT Support Specialist",
+      "department": "Information Technology",
+      "reports_to_title": "IT Manager",
+      "reports_to_emp_id": "EMP-004",
+      "direct_reports": [],
+      "location": "Nagpur",
+      "email": "kabir.shah@northstar.example"
+    },
+    "EMP-006": {
+      "name": "Ananya Iyer",
+      "title": "Engineering Manager",
+      "department": "Engineering",
+      "reports_to_title": "Chief Technology Officer",
+      "reports_to_emp_id": null,
+      "direct_reports": [
+        "EMP-007",
+        "EMP-008"
+      ],
+      "location": "Bengaluru",
+      "email": "ananya.iyer@northstar.example"
+    },
+    "EMP-007": {
+      "name": "Vikram Joshi",
+      "title": "Senior Software Engineer",
+      "department": "Engineering",
+      "reports_to_title": "Engineering Manager",
+      "reports_to_emp_id": "EMP-006",
+      "direct_reports": [],
+      "location": "Pune",
+      "email": "vikram.joshi@northstar.example"
+    },
+    "EMP-008": {
+      "name": "Mira Nair",
+      "title": "Software Engineer",
+      "department": "Engineering",
+      "reports_to_title": "Engineering Manager",
+      "reports_to_emp_id": "EMP-006",
+      "direct_reports": [],
+      "location": "Nagpur",
+      "email": "mira.nair@northstar.example"
+    },
+    "EMP-009": {
+      "name": "Dev Patel",
+      "title": "Data & Analytics Manager",
+      "department": "Data & Analytics",
+      "reports_to_title": "Chief Technology Officer",
+      "reports_to_emp_id": null,
+      "direct_reports": [
+        "EMP-010"
+      ],
+      "location": "Bengaluru",
+      "email": "dev.patel@northstar.example"
+    },
+    "EMP-010": {
+      "name": "Sana Khan",
+      "title": "Data Analyst",
+      "department": "Data & Analytics",
+      "reports_to_title": "Data & Analytics Manager",
+      "reports_to_emp_id": "EMP-009",
+      "direct_reports": [],
+      "location": "Nagpur",
+      "email": "sana.khan@northstar.example"
+    },
+    "EMP-011": {
+      "name": "Arjun Bhat",
+      "title": "Finance Manager",
+      "department": "Finance & Administration",
+      "reports_to_title": "Chief Financial Officer",
+      "reports_to_emp_id": null,
+      "direct_reports": [
+        "EMP-012"
+      ],
+      "location": "Pune",
+      "email": "arjun.bhat@northstar.example"
+    },
+    "EMP-012": {
+      "name": "Tara Menon",
+      "title": "Travel & Administration Coordinator",
+      "department": "Finance & Administration",
+      "reports_to_title": "Finance Manager",
+      "reports_to_emp_id": "EMP-011",
+      "direct_reports": [],
+      "location": "Nagpur",
+      "email": "tara.menon@northstar.example"
+    },
+    "EMP-013": {
+      "name": "Rahul Sethi",
+      "title": "Customer Success Manager",
+      "department": "Sales & Customer Success",
+      "reports_to_title": "Chief Operating Officer",
+      "reports_to_emp_id": null,
+      "direct_reports": [],
+      "location": "Bengaluru",
+      "email": "rahul.sethi@northstar.example"
+    }
+  },
+  "groups": {
+    "GRP_ALL_EMPLOYEES": [
+      "EMP-001",
+      "EMP-002",
+      "EMP-003",
+      "EMP-004",
+      "EMP-005",
+      "EMP-006",
+      "EMP-007",
+      "EMP-008",
+      "EMP-009",
+      "EMP-010",
+      "EMP-011",
+      "EMP-012",
+      "EMP-013"
+    ],
+    "GRP_MANAGERS": [
+      "EMP-001",
+      "EMP-002",
+      "EMP-004",
+      "EMP-006",
+      "EMP-009",
+      "EMP-011"
+    ],
+    "GRP_DEPT_HR": [
+      "EMP-002",
+      "EMP-003"
+    ],
+    "GRP_DEPT_IT": [
+      "EMP-004",
+      "EMP-005"
+    ],
+    "GRP_DEPT_ENG": [
+      "EMP-006",
+      "EMP-007",
+      "EMP-008"
+    ],
+    "GRP_DEPT_DA": [
+      "EMP-009",
+      "EMP-010"
+    ],
+    "GRP_DEPT_FIN": [
+      "EMP-011",
+      "EMP-012"
+    ],
+    "GRP_DEPT_SCS": [
+      "EMP-013"
+    ]
+  },
+  "group_membership_notes": "Manager status is derived from having direct reports within the listed directory only. Employees reporting to unlisted CTO/COO/CFO are not counted as direct reports of those roles.",
+  "contact_routing": [
+    {
+      "reason": "Recruitment, joining documents, employee records",
+      "team": "Human Resources",
+      "contact": "ishita.rao@northstar.example"
+    },
+    {
+      "reason": "Leave, attendance, workplace concerns",
+      "team": "Human Resources",
+      "contact": "rohan.deshpande@northstar.example"
+    },
+    {
+      "reason": "Laptop, email account, access or IT issue",
+      "team": "Information Technology",
+      "contact": "kabir.shah@northstar.example"
+    },
+    {
+      "reason": "Software development, code review or release workflow",
+      "team": "Engineering",
+      "contact": "ananya.iyer@northstar.example"
+    },
+    {
+      "reason": "Data platform, analytics or reporting questions",
+      "team": "Data & Analytics",
+      "contact": "dev.patel@northstar.example"
+    },
+    {
+      "reason": "Expense reimbursement, invoices or travel claims",
+      "team": "Finance & Administration",
+      "contact": "arjun.bhat@northstar.example"
+    },
+    {
+      "reason": "Customer account or service query",
+      "team": "Sales & Customer Success",
+      "contact": "rahul.sethi@northstar.example"
+    }
+  ],
+  "missing_manager_titles": [
+    "Chief Operating Officer",
+    "Chief Financial Officer",
+    "Chief Technology Officer"
+  ],
+  "roots": [
+    "EMP-001",
+    "EMP-004",
+    "EMP-006",
+    "EMP-009",
+    "EMP-011",
+    "EMP-013"
+  ]
+}

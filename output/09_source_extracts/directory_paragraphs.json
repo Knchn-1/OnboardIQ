@@ -1,0 +1,200 @@
+[
+  {
+    "index": 0,
+    "text": "NORTHSTAR TECHNOLOGIES",
+    "style": "Normal",
+    "level": null
+  },
+  {
+    "index": 1,
+    "text": "Company Overview & Employee Directory",
+    "style": "Normal",
+    "level": null
+  },
+  {
+    "index": 2,
+    "text": "DEMONSTRATION DATA — FICTIONAL COMPANY",
+    "style": "Normal",
+    "level": null
+  },
+  {
+    "index": 3,
+    "text": "Document ID: CORP-001  |  Version: 1.0  |  Effective date: 01 November 2026  |  Document owner: Human Resources & Administration",
+    "style": "Normal",
+    "level": null
+  },
+  {
+    "index": 4,
+    "text": "1. About the Company",
+    "style": "Heading 1",
+    "level": "Heading 1"
+  },
+  {
+    "index": 5,
+    "text": "Northstar Technologies is a fictional India-based technology services and product engineering company created for the OnboardIQ demonstration environment. The company designs and builds software platforms, data solutions and cloud-based applications for business customers. All company details, employee names, roles, email addresses and contact channels in this document are invented sample data and do not describe a real organization or real people.",
+    "style": "Normal",
+    "level": null
+  },
+  {
+    "index": 6,
+    "text": "2. Company Profile",
+    "style": "Heading 1",
+    "level": "Heading 1"
+  },
+  {
+    "index": 7,
+    "text": "3. Vision, Mission and Values",
+    "style": "Heading 1",
+    "level": "Heading 1"
+  },
+  {
+    "index": 8,
+    "text": "Vision",
+    "style": "Heading 2",
+    "level": "Heading 2"
+  },
+  {
+    "index": 9,
+    "text": "To make useful technology accessible, reliable and impactful for organizations and the people they serve.",
+    "style": "Normal",
+    "level": null
+  },
+  {
+    "index": 10,
+    "text": "Mission",
+    "style": "Heading 2",
+    "level": "Heading 2"
+  },
+  {
+    "index": 11,
+    "text": "To understand customer and employee needs, build dependable digital solutions, use data responsibly, and continuously improve through collaboration and learning.",
+    "style": "Normal",
+    "level": null
+  },
+  {
+    "index": 12,
+    "text": "Core values",
+    "style": "Heading 2",
+    "level": "Heading 2"
+  },
+  {
+    "index": 13,
+    "text": "Integrity: communicate honestly and act responsibly.",
+    "style": "List Bullet",
+    "level": null
+  },
+  {
+    "index": 14,
+    "text": "Respect: create a safe, inclusive and professional workplace.",
+    "style": "List Bullet",
+    "level": null
+  },
+  {
+    "index": 15,
+    "text": "Customer focus: understand requirements and deliver practical value.",
+    "style": "List Bullet",
+    "level": null
+  },
+  {
+    "index": 16,
+    "text": "Ownership: take responsibility for quality, commitments and outcomes.",
+    "style": "List Bullet",
+    "level": null
+  },
+  {
+    "index": 17,
+    "text": "Learning: share knowledge and improve skills continuously.",
+    "style": "List Bullet",
+    "level": null
+  },
+  {
+    "index": 18,
+    "text": "Security and privacy: protect company, customer and employee information.",
+    "style": "List Bullet",
+    "level": null
+  },
+  {
+    "index": 19,
+    "text": "4. Organization Structure and Departments",
+    "style": "Heading 1",
+    "level": "Heading 1"
+  },
+  {
+    "index": 20,
+    "text": "5. Employee Directory",
+    "style": "Heading 1",
+    "level": "Heading 1"
+  },
+  {
+    "index": 21,
+    "text": "The directory below contains fictional sample employees for demonstrating organization search, department lookups and contact-routing questions. Email addresses use the reserved .example domain. They are not real contact details.",
+    "style": "Normal",
+    "level": null
+  },
+  {
+    "index": 22,
+    "text": "6. Who to Contact",
+    "style": "Heading 1",
+    "level": "Heading 1"
+  },
+  {
+    "index": 23,
+    "text": "7. General Contact and Escalation Guidance",
+    "style": "Heading 1",
+    "level": "Heading 1"
+  },
+  {
+    "index": 24,
+    "text": "For a routine question, contact the relevant department or your reporting manager.",
+    "style": "List Bullet",
+    "level": null
+  },
+  {
+    "index": 25,
+    "text": "For an IT access or device issue, contact the IT Support Specialist. If unresolved, escalate to the IT Manager.",
+    "style": "List Bullet",
+    "level": null
+  },
+  {
+    "index": 26,
+    "text": "For an employee policy or onboarding concern, contact HR. Sensitive complaints should use the confidential channel defined in the applicable finalized policy.",
+    "style": "List Bullet",
+    "level": null
+  },
+  {
+    "index": 27,
+    "text": "For expense or travel reimbursement questions, contact Finance & Administration after checking the applicable policy.",
+    "style": "List Bullet",
+    "level": null
+  },
+  {
+    "index": 28,
+    "text": "For suspected information security incidents, follow the finalized Information Security Policy and use its designated incident-reporting channel.",
+    "style": "List Bullet",
+    "level": null
+  },
+  {
+    "index": 29,
+    "text": "This directory is a demonstration reference. In a real deployment, the organization administrator must verify contacts, reporting lines and permissions before publication.",
+    "style": "List Bullet",
+    "level": null
+  },
+  {
+    "index": 30,
+    "text": "8. Document Governance",
+    "style": "Heading 1",
+    "level": "Heading 1"
+  },
+  {
+    "index": 31,
+    "text": "Owner: Human Resources & Administration. Review frequency: every six months or when the organization structure, department ownership or contact details change. Changes must be approved by the designated company administrator before the updated directory is published. Previous versions should be archived and marked superseded so that the assistant does not present outdated contacts as current.",
+    "style": "Normal",
+    "level": null
+  },
+  {
+    "index": 32,
+    "text": "Access classification: Internal demonstration data. Do not use this fictional directory as a real contact list. The sample names and addresses are fabricated for software testing.",
+    "style": "Normal",
+    "level": null
+  }
+]

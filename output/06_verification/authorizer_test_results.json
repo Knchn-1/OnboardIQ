@@ -1,0 +1,136 @@
+{
+  "total_tests": 16,
+  "passed_tests": 16,
+  "failed_tests": 0,
+  "status": "PASS",
+  "test_results": [
+    {
+      "test_id": "TC-AC-001",
+      "description": "Vikram Joshi (ENG) accesses ALL_EMPLOYEES content",
+      "expected": true,
+      "actual": true,
+      "passed": true,
+      "details": "ALLOW: Authorized via matched groups: ['GRP_ALL_EMPLOYEES']"
+    },
+    {
+      "test_id": "TC-AC-002",
+      "description": "Vikram Joshi (ENG) accesses RU-001 (HR Disciplinary)",
+      "expected": false,
+      "actual": false,
+      "passed": true,
+      "details": "DENY: Principal lacks required group membership."
+    },
+    {
+      "test_id": "TC-AC-003",
+      "description": "Ishita Rao (HR) accesses RU-001 (HR Disciplinary)",
+      "expected": true,
+      "actual": true,
+      "passed": true,
+      "details": "ALLOW: Authorized via matched groups: ['GRP_DEPT_HR']"
+    },
+    {
+      "test_id": "TC-AC-004",
+      "description": "Sana Khan (DA) accesses RU-002 (IT Incident Playbook)",
+      "expected": false,
+      "actual": false,
+      "passed": true,
+      "details": "DENY: Principal lacks required group membership."
+    },
+    {
+      "test_id": "TC-AC-005",
+      "description": "Neha Kulkarni (IT) accesses RU-002 (IT Incident Playbook)",
+      "expected": true,
+      "actual": true,
+      "passed": true,
+      "details": "ALLOW: Authorized via matched groups: ['GRP_DEPT_IT']"
+    },
+    {
+      "test_id": "TC-AC-006",
+      "description": "Rahul Sethi (SCS) accesses RU-003 (Finance Audit Controls)",
+      "expected": false,
+      "actual": false,
+      "passed": true,
+      "details": "DENY: Principal lacks required group membership."
+    },
+    {
+      "test_id": "TC-AC-007",
+      "description": "Arjun Bhat (FIN) accesses RU-003 (Finance Audit Controls)",
+      "expected": true,
+      "actual": true,
+      "passed": true,
+      "details": "ALLOW: Authorized via matched groups: ['GRP_DEPT_FIN']"
+    },
+    {
+      "test_id": "TC-AC-008",
+      "description": "Mira Nair (SWE, Non-Manager) accesses Performance/Promotion Policy",
+      "expected": false,
+      "actual": false,
+      "passed": true,
+      "details": "DENY: Principal lacks required group membership."
+    },
+    {
+      "test_id": "TC-AC-009",
+      "description": "Ananya Iyer (Engineering Manager) accesses Performance/Promotion Policy",
+      "expected": true,
+      "actual": true,
+      "passed": true,
+      "details": "ALLOW: Authorized via matched groups: ['GRP_MANAGERS']"
+    },
+    {
+      "test_id": "TC-AC-010",
+      "description": "Unregistered Principal (EMP-999) accesses public content",
+      "expected": false,
+      "actual": false,
+      "passed": true,
+      "details": "DENY: Principal is missing, unknown, or unresolvable."
+    },
+    {
+      "test_id": "TC-AC-011",
+      "description": "Missing Principal (None) accesses content",
+      "expected": false,
+      "actual": false,
+      "passed": true,
+      "details": "DENY: Principal is missing, unknown, or unresolvable."
+    },
+    {
+      "test_id": "TC-AC-012",
+      "description": "Corrupt metadata with empty allowed_groups",
+      "expected": false,
+      "actual": false,
+      "passed": true,
+      "details": "DENY: Malformed, missing, or empty allowed_groups."
+    },
+    {
+      "test_id": "TC-AC-013",
+      "description": "Corrupt metadata with invented group name",
+      "expected": false,
+      "actual": false,
+      "passed": true,
+      "details": "DENY: Invalid group 'GRP_SUPERADMIN_INVENTED' detected in metadata."
+    },
+    {
+      "test_id": "TC-AC-014",
+      "description": "Stale/revoked policy version chunk",
+      "expected": false,
+      "actual": false,
+      "passed": true,
+      "details": "DENY: Stale or mismatched access policy version."
+    },
+    {
+      "test_id": "TC-AC-015",
+      "description": "SQL pre-query filter generation for ENG employee",
+      "expected": true,
+      "actual": true,
+      "passed": true,
+      "details": "WHERE allowed_groups && ARRAY['GRP_ALL_EMPLOYEES', 'GRP_DEPT_ENG']"
+    },
+    {
+      "test_id": "TC-AC-016",
+      "description": "SQL pre-query filter for unauthenticated user",
+      "expected": "WHERE 1 = 0",
+      "actual": "WHERE 1 = 0",
+      "passed": true,
+      "details": "WHERE 1 = 0"
+    }
+  ]
+}

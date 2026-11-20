@@ -1,0 +1,20 @@
+[
+  {
+    "superseded_key": "SUP-001",
+    "topic": "Legacy 8-character password policy",
+    "historical_source": "IT Manual Template Section 4.2",
+    "superseded_value": "8 characters, 365-day rotation",
+    "current_value": "12 characters, 90-day rotation, mandatory MFA (NST-IT-POL-001)",
+    "lifecycle_state": "SUPERSEDED",
+    "index_flag": "ARCHIVE"
+  },
+  {
+    "superseded_key": "SUP-002",
+    "topic": "Informal 3-day work from home proposal",
+    "historical_source": "BetterJobs WFH Template draft",
+    "superseded_value": "3 days remote per week",
+    "current_value": "Max 2 days remote per week, office-first model (NST-HR-POL-004)",
+    "lifecycle_state": "SUPERSEDED",
+    "index_flag": "ARCHIVE"
+  }
+]
