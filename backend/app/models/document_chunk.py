@@ -61,7 +61,7 @@ class DocumentChunk(Base, TimestampMixin):
     content: Mapped[str] = mapped_column(Text, nullable=False)
     word_count: Mapped[int] = mapped_column(Integer, nullable=False)
     classification_audience: Mapped[str] = mapped_column(String(50), nullable=False)
-    allowed_groups: Mapped[list[str]] = mapped_column(ARRAY(String), nullable=False)
+    allowed_groups: Mapped[list[str]] = mapped_column(ARRAY(Text), nullable=False)
     restricted_unit_id: Mapped[str | None] = mapped_column(String(20), nullable=True)
     access_policy_version: Mapped[str] = mapped_column(String(20), nullable=False)
     lifecycle_state: Mapped[str] = mapped_column(String(20), nullable=False)
