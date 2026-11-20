@@ -18,6 +18,8 @@ class Settings(BaseSettings):
     POSTGRES_HOST: str = "localhost"
     POSTGRES_PORT: int = 5432
     KNOWLEDGE_BASE_DIR: Path = REPO_ROOT / "knowledge_base"
+    ACCESS_POLICY_VERSION: str = "v1.0"
+    EMBEDDING_DIM: int = 384
 
     def get_database_url(self, database: str | None = None) -> URL:
         return URL.create(
