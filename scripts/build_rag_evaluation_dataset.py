@@ -20,12 +20,12 @@ Validates every gold quote against chunk manifests and maps exact chunk IDs.
 import json
 import os
 
-OUTPUT_EVAL_DIR = "output/08_evaluation"
+OUTPUT_EVAL_DIR = "knowledge_base/08_evaluation"
 os.makedirs(OUTPUT_EVAL_DIR, exist_ok=True)
 
 # Load chunk manifest for quote verification and chunk ID retrieval
 chunks = []
-with open("output/05_rag_metadata/chunk_manifest.jsonl", "r", encoding="utf-8") as f:
+with open("knowledge_base/05_rag_metadata/chunk_manifest.jsonl", "r", encoding="utf-8") as f:
     for line in f:
         chunks.append(json.loads(line))
 

@@ -1,6 +1,6 @@
 """
 Phase 5: Generate all Northstar Technologies policy DOCX documents.
-Reads from Master Data JSON. Writes to output/02_documents_docx/.
+Reads from Master Data JSON. Writes to knowledge_base/02_documents_docx/.
 """
 import json
 import os
@@ -10,10 +10,10 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.oxml.ns import qn
 
-OUTPUT_DIR = "output/02_documents_docx"
+OUTPUT_DIR = "knowledge_base/02_documents_docx"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-with open("output/01_master_data/northstar_master_data.json", "r", encoding="utf-8") as f:
+with open("knowledge_base/01_master_data/northstar_master_data.json", "r", encoding="utf-8") as f:
     MD = json.load(f)
 
 DEMO_LABEL = MD["_metadata"]["demonstration_label"]

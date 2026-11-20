@@ -11,10 +11,10 @@ from docx import Document
 from docx.shared import Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 
-OUTPUT_DIR = "output/02_documents_docx"
+OUTPUT_DIR = "knowledge_base/02_documents_docx"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-with open("output/01_master_data/northstar_master_data.json", "r", encoding="utf-8") as f:
+with open("knowledge_base/01_master_data/northstar_master_data.json", "r", encoding="utf-8") as f:
     MD = json.load(f)
 
 DEMO_LABEL = MD["_metadata"]["demonstration_label"]

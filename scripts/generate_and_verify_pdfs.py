@@ -17,9 +17,9 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 
-DOCX_DIR = "output/02_documents_docx"
-PDF_DIR = "output/03_documents_pdf"
-QA_IMG_DIR = "output/06_verification/pdf_visual_qa"
+DOCX_DIR = "knowledge_base/02_documents_docx"
+PDF_DIR = "knowledge_base/03_documents_pdf"
+QA_IMG_DIR = "knowledge_base/06_verification/pdf_visual_qa"
 os.makedirs(PDF_DIR, exist_ok=True)
 os.makedirs(QA_IMG_DIR, exist_ok=True)
 
@@ -313,9 +313,9 @@ for fname in docx_files:
     qa_report["documents"].append(doc_entry)
     print(f"  [OK] {base:<50} -> {page_count} pages, ~{pdf_words} words, QA images rendered.")
 
-with open("output/06_verification/pdf_qa_report.json", "w", encoding="utf-8") as f:
+with open("knowledge_base/06_verification/pdf_qa_report.json", "w", encoding="utf-8") as f:
     json.dump(qa_report, f, indent=2)
 
 print("\nPhase 6 PDF Generation and QA complete.")
-print(f"Report saved to output/06_verification/pdf_qa_report.json")
+print(f"Report saved to knowledge_base/06_verification/pdf_qa_report.json")
 

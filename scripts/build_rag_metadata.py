@@ -2,10 +2,10 @@
 Phase 7: Build RAG Metadata Manifests & Registers
 Extracts document, section, and chunk level records from the 15 finalized DOCX & PDF files.
 Generates:
-  - output/05_rag_metadata/document_manifest.jsonl
-  - output/05_rag_metadata/section_index.jsonl
-  - output/05_rag_metadata/chunk_manifest.jsonl
-  - output/04_registers_and_reports/policy_registry.json & .md
+  - knowledge_base/05_rag_metadata/document_manifest.jsonl
+  - knowledge_base/05_rag_metadata/section_index.jsonl
+  - knowledge_base/05_rag_metadata/chunk_manifest.jsonl
+  - knowledge_base/04_registers_and_reports/policy_registry.json & .md
 """
 import os
 import json
@@ -13,12 +13,12 @@ import hashlib
 import docx
 import fitz
 
-OUTPUT_META_DIR = "output/05_rag_metadata"
-OUTPUT_REG_DIR = "output/04_registers_and_reports"
+OUTPUT_META_DIR = "knowledge_base/05_rag_metadata"
+OUTPUT_REG_DIR = "knowledge_base/04_registers_and_reports"
 os.makedirs(OUTPUT_META_DIR, exist_ok=True)
 os.makedirs(OUTPUT_REG_DIR, exist_ok=True)
 
-with open("output/01_master_data/northstar_master_data.json", "r", encoding="utf-8") as f:
+with open("knowledge_base/01_master_data/northstar_master_data.json", "r", encoding="utf-8") as f:
     MD = json.load(f)
 
 DEMO_LABEL = MD["_metadata"]["demonstration_label"]
@@ -34,8 +34,8 @@ def sha256_file(path):
 # Load doc map
 doc_map_lookup = {item["policy_id"]: item for item in MD["Document_Number_Map"]}
 
-docx_dir = "output/02_documents_docx"
-pdf_dir = "output/03_documents_pdf"
+docx_dir = "knowledge_base/02_documents_docx"
+pdf_dir = "knowledge_base/03_documents_pdf"
 docx_files = sorted(os.listdir(docx_dir))
 
 document_manifest = []
@@ -285,24 +285,24 @@ for df in docx_files:
             chunk_manifest.append(chunk_entry)
 
 # Write JSONL manifests
-with open("output/05_rag_metadata/document_manifest.jsonl", "w", encoding="utf-8") as f:
+with open("knowledge_base/05_rag_metadata/document_manifest.jsonl", "w", encoding="utf-8") as f:
     for doc in document_manifest:
         f.write(json.dumps(doc, ensure_ascii=False) + "\n")
 
-with open("output/05_rag_metadata/section_index.jsonl", "w", encoding="utf-8") as f:
+with open("knowledge_base/05_rag_metadata/section_index.jsonl", "w", encoding="utf-8") as f:
     for sec in section_index:
         f.write(json.dumps(sec, ensure_ascii=False) + "\n")
 
-with open("output/05_rag_metadata/chunk_manifest.jsonl", "w", encoding="utf-8") as f:
+with open("knowledge_base/05_rag_metadata/chunk_manifest.jsonl", "w", encoding="utf-8") as f:
     for chk in chunk_manifest:
         f.write(json.dumps(chk, ensure_ascii=False) + "\n")
 
 # Write Policy Registry in 04_registers_and_reports
-with open("output/04_registers_and_reports/policy_registry.json", "w", encoding="utf-8") as f:
+with open("knowledge_base/04_registers_and_reports/policy_registry.json", "w", encoding="utf-8") as f:
     json.dump(document_manifest, f, indent=2, ensure_ascii=False)
 
 # Markdown table version
-with open("output/04_registers_and_reports/policy_registry.md", "w", encoding="utf-8") as f:
+with open("knowledge_base/04_registers_and_reports/policy_registry.md", "w", encoding="utf-8") as f:
     f.write(f"# Northstar Technologies — Policy & Document Registry\n\n")
     f.write(f"**{DEMO_LABEL}**\n\n")
     f.write("| Policy ID | Title | Owner | Audience | File Serving Audience | Total Pages | DOCX SHA-256 (prefix) |\n")

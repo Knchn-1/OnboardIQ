@@ -12,7 +12,7 @@ STATUTORY_NOTE = "Statutory position to be verified by qualified legal/HR counse
 TIMESTAMP = "2026-11-07"
 
 # Load directory data
-with open('output/09_source_extracts/directory_integrity_report.json', 'r', encoding='utf-8') as f:
+with open('knowledge_base/09_source_extracts/directory_integrity_report.json', 'r', encoding='utf-8') as f:
     dir_data = json.load(f)
 
 master_data = {
@@ -350,8 +350,8 @@ master_data = {
 }
 
 # Save
-os.makedirs('output/01_master_data', exist_ok=True)
-with open('output/01_master_data/northstar_master_data.json', 'w', encoding='utf-8') as f:
+os.makedirs('knowledge_base/01_master_data', exist_ok=True)
+with open('knowledge_base/01_master_data/northstar_master_data.json', 'w', encoding='utf-8') as f:
     json.dump(master_data, f, indent=2, ensure_ascii=False)
 
 print("Master Data created successfully.")

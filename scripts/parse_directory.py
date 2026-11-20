@@ -55,12 +55,12 @@ for t in tables_data:
         print(f"    Header: {t['rows'][0]}")
 
 # Save extractions
-os.makedirs('output/09_source_extracts', exist_ok=True)
-with open('output/09_source_extracts/directory_paragraphs.json', 'w', encoding='utf-8') as f:
+os.makedirs('knowledge_base/09_source_extracts', exist_ok=True)
+with open('knowledge_base/09_source_extracts/directory_paragraphs.json', 'w', encoding='utf-8') as f:
     json.dump(paras, f, indent=2, ensure_ascii=False)
-with open('output/09_source_extracts/directory_tables.json', 'w', encoding='utf-8') as f:
+with open('knowledge_base/09_source_extracts/directory_tables.json', 'w', encoding='utf-8') as f:
     json.dump(tables_data, f, indent=2, ensure_ascii=False)
-with open('output/09_source_extracts/directory_census.json', 'w', encoding='utf-8') as f:
+with open('knowledge_base/09_source_extracts/directory_census.json', 'w', encoding='utf-8') as f:
     json.dump(census, f, indent=2, ensure_ascii=False)
 
 print("\nDirectory extraction complete.")

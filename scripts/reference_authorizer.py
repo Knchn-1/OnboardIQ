@@ -5,7 +5,7 @@ Enforces strict fail-closed authorization according to specs/04_RAG_AND_ACCESS_C
 import json
 
 class ReferenceAuthorizer:
-    def __init__(self, master_data_path="output/01_master_data/northstar_master_data.json"):
+    def __init__(self, master_data_path="knowledge_base/01_master_data/northstar_master_data.json"):
         with open(master_data_path, "r", encoding="utf-8") as f:
             self.md = json.load(f)
             

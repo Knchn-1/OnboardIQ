@@ -6,7 +6,7 @@ import json
 import os
 
 # Load extracted data
-with open('output/09_source_extracts/directory_tables.json', 'r', encoding='utf-8') as f:
+with open('knowledge_base/09_source_extracts/directory_tables.json', 'r', encoding='utf-8') as f:
     tables = json.load(f)
 
 # Table 0: Company Profile (9 rows x 2 cols)
@@ -298,8 +298,8 @@ output = {
     'roots': roots
 }
 
-os.makedirs('output/09_source_extracts', exist_ok=True)
-with open('output/09_source_extracts/directory_integrity_report.json', 'w', encoding='utf-8') as f:
+os.makedirs('knowledge_base/09_source_extracts', exist_ok=True)
+with open('knowledge_base/09_source_extracts/directory_integrity_report.json', 'w', encoding='utf-8') as f:
     json.dump(output, f, indent=2, ensure_ascii=False)
 
 # Print summary

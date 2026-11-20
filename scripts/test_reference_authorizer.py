@@ -135,7 +135,7 @@ def run_tests():
     log_test("TC-AC-016", "SQL pre-query filter for unauthenticated user", "WHERE 1 = 0", db_clause_fake, db_clause_fake == "WHERE 1 = 0", db_clause_fake)
 
     # Save results
-    os.makedirs("output/06_verification", exist_ok=True)
+    os.makedirs("knowledge_base/06_verification", exist_ok=True)
     summary = {
         "total_tests": len(results),
         "passed_tests": sum(1 for r in results if r["passed"]),
@@ -144,7 +144,7 @@ def run_tests():
         "test_results": results
     }
     
-    with open("output/06_verification/authorizer_test_results.json", "w", encoding="utf-8") as f:
+    with open("knowledge_base/06_verification/authorizer_test_results.json", "w", encoding="utf-8") as f:
         json.dump(summary, f, indent=2)
         
     print(f"Authorizer tests finished: {summary['passed_tests']}/{summary['total_tests']} PASSED.")

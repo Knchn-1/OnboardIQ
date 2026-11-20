@@ -1,17 +1,17 @@
 """
 Phase 9: Final Corpus Verification, Register Generation, and Packaging
 - Re-verifies source hashes and generated artifact integrity
-- Exports all formal registers to output/04_registers_and_reports/
-- Populates output/07_archive_superseded/
-- Finalizes output/06_verification/ logs and progress tracking
-- Generates comprehensive output/README.md
+- Exports all formal registers to knowledge_base/04_registers_and_reports/
+- Populates knowledge_base/07_archive_superseded/
+- Finalizes knowledge_base/06_verification/ logs and progress tracking
+- Generates comprehensive knowledge_base/README.md
 """
 import os
 import json
 import hashlib
 from datetime import datetime
 
-with open("output/01_master_data/northstar_master_data.json", "r", encoding="utf-8") as f:
+with open("knowledge_base/01_master_data/northstar_master_data.json", "r", encoding="utf-8") as f:
     MD = json.load(f)
 
 DEMO_LABEL = MD["_metadata"]["demonstration_label"]
@@ -25,7 +25,7 @@ def sha256_file(path):
     return h.hexdigest()
 
 # 1. Source Hash Integrity Verification
-with open("output/06_verification/source_hashes.json", "r", encoding="utf-8") as f:
+with open("knowledge_base/06_verification/source_hashes.json", "r", encoding="utf-8") as f:
     orig_hashes = json.load(f)
 
 source_checks = []
@@ -50,13 +50,13 @@ all_source_match = all(c.get("match") for c in source_checks)
 print(f"Source Hash Integrity Check: {'PASS' if all_source_match else 'FAIL'} ({len(source_checks)} files)")
 
 # 2. Export Registers to 04_registers_and_reports
-os.makedirs("output/04_registers_and_reports", exist_ok=True)
+os.makedirs("knowledge_base/04_registers_and_reports", exist_ok=True)
 
 # Decision Log
-with open("output/04_registers_and_reports/decision_log.json", "w", encoding="utf-8") as f:
+with open("knowledge_base/04_registers_and_reports/decision_log.json", "w", encoding="utf-8") as f:
     json.dump(MD["Decision_Log"], f, indent=2, ensure_ascii=False)
 
-with open("output/04_registers_and_reports/decision_log.md", "w", encoding="utf-8") as f:
+with open("knowledge_base/04_registers_and_reports/decision_log.md", "w", encoding="utf-8") as f:
     f.write(f"# Northstar Technologies — Architecture Decision Log\n\n**{DEMO_LABEL}**\n\n")
     f.write("| Decision ID | Topic | Question / Gap | Chosen Resolution | Provenance | Affected Docs | Status |\n")
     f.write("|---|---|---|---|---|---|---|\n")
@@ -64,10 +64,10 @@ with open("output/04_registers_and_reports/decision_log.md", "w", encoding="utf-
         f.write(f"| {d['id']} | {d['topic']} | {d['question']} | {d['chosen']} | `{d['provenance']}` | `{d['affected_docs']}` | {d['status']} |\n")
 
 # Legal Review Register
-with open("output/04_registers_and_reports/legal_review_register.json", "w", encoding="utf-8") as f:
+with open("knowledge_base/04_registers_and_reports/legal_review_register.json", "w", encoding="utf-8") as f:
     json.dump(MD["Legal_Review_Register"], f, indent=2, ensure_ascii=False)
 
-with open("output/04_registers_and_reports/legal_review_register.md", "w", encoding="utf-8") as f:
+with open("knowledge_base/04_registers_and_reports/legal_review_register.md", "w", encoding="utf-8") as f:
     f.write(f"# Northstar Technologies — Legal Review Register\n\n**{DEMO_LABEL}**\n\n")
     f.write(f"> [!IMPORTANT]\n> {STAT_NOTE}\n\n")
     f.write("| Review ID | Statutory Topic | Legal Framework | Jurisdictions | Fictional Company Rule | Reviewer | Status |\n")
@@ -87,10 +87,10 @@ for doc_map in MD["Document_Number_Map"]:
         "restricted_sections": doc_map["restricted_sections"]
     })
 
-with open("output/04_registers_and_reports/traceability_matrix.json", "w", encoding="utf-8") as f:
+with open("knowledge_base/04_registers_and_reports/traceability_matrix.json", "w", encoding="utf-8") as f:
     json.dump(trace_data, f, indent=2, ensure_ascii=False)
 
-with open("output/04_registers_and_reports/traceability_matrix.md", "w", encoding="utf-8") as f:
+with open("knowledge_base/04_registers_and_reports/traceability_matrix.md", "w", encoding="utf-8") as f:
     f.write(f"# Northstar Technologies — Source-to-Document Traceability Matrix\n\n**{DEMO_LABEL}**\n\n")
     f.write("| Policy ID | Document Title | Owner | Target Audience | Source Authority | Restricted Sections |\n")
     f.write("|---|---|---|---|---|---|\n")
@@ -134,10 +134,10 @@ conflicts = [
     }
 ]
 
-with open("output/04_registers_and_reports/conflict_and_gap_register.json", "w", encoding="utf-8") as f:
+with open("knowledge_base/04_registers_and_reports/conflict_and_gap_register.json", "w", encoding="utf-8") as f:
     json.dump(conflicts, f, indent=2, ensure_ascii=False)
 
-with open("output/04_registers_and_reports/conflict_and_gap_register.md", "w", encoding="utf-8") as f:
+with open("knowledge_base/04_registers_and_reports/conflict_and_gap_register.md", "w", encoding="utf-8") as f:
     f.write(f"# Northstar Technologies — Conflict and Gap Register\n\n**{DEMO_LABEL}**\n\n")
     f.write("| Conflict ID | Topic | Conflict / Gap Description | Adopted Resolution | Provenance | Status |\n")
     f.write("|---|---|---|---|---|---|\n")
@@ -145,8 +145,8 @@ with open("output/04_registers_and_reports/conflict_and_gap_register.md", "w", e
         f.write(f"| {c['conflict_id']} | {c['topic']} | {c['conflict_description']} | {c['resolution']} | `{c['provenance']}` | `{c['status']}` |\n")
 
 # 3. Populate 07_archive_superseded
-os.makedirs("output/07_archive_superseded", exist_ok=True)
-with open("output/07_archive_superseded/superseded_policy_index.json", "w", encoding="utf-8") as f:
+os.makedirs("knowledge_base/07_archive_superseded", exist_ok=True)
+with open("knowledge_base/07_archive_superseded/superseded_policy_index.json", "w", encoding="utf-8") as f:
     json.dump([
         {
             "superseded_key": "SUP-001",
@@ -168,7 +168,7 @@ with open("output/07_archive_superseded/superseded_policy_index.json", "w", enco
         }
     ], f, indent=2)
 
-with open("output/07_archive_superseded/README.md", "w", encoding="utf-8") as f:
+with open("knowledge_base/07_archive_superseded/README.md", "w", encoding="utf-8") as f:
     f.write(f"# Archive of Superseded Policy Values\n\n**{DEMO_LABEL}**\n\n")
     f.write("This directory archives obsolete, replaced, or draft policy thresholds derived from structural templates.\n")
     f.write("All artifacts in this section carry `lifecycle_state=SUPERSEDED` and `index_flag=ARCHIVE`.\n")
@@ -212,11 +212,11 @@ progress = {
     }
 }
 
-with open("output/06_verification/progress.json", "w", encoding="utf-8") as f:
+with open("knowledge_base/06_verification/progress.json", "w", encoding="utf-8") as f:
     json.dump(progress, f, indent=2)
 
 # Verification Log
-with open("output/06_verification/verification_log.md", "w", encoding="utf-8") as f:
+with open("knowledge_base/06_verification/verification_log.md", "w", encoding="utf-8") as f:
     f.write(f"# OnboardIQ — Verification Log\n\n**{DEMO_LABEL}**\n\n")
     f.write("## Corpus-Level Verification Summary\n\n")
     f.write(f"- **Timestamp**: {datetime.now().isoformat()}\n")
@@ -228,7 +228,7 @@ with open("output/06_verification/verification_log.md", "w", encoding="utf-8") a
     f.write(f"- **Reference Authorizer Tests**: 16/16 PASSED (100% fail-closed compliance)\n")
     f.write(f"- **RAG Evaluation Dataset**: 95 questions across 14 categories verified against chunk text\n")
 
-# 5. Build Comprehensive output/README.md
+# 5. Build Comprehensive knowledge_base/README.md
 readme_content = f"""# OnboardIQ — Northstar Technologies Knowledge Base
 
 **{DEMO_LABEL}**
@@ -241,7 +241,7 @@ Northstar Technologies is a fictional India-based IT-services company (Head Offi
 ## 2. Directory Structure & Inventory
 
 ```
-/output/
+/knowledge_base/
 ├── 01_master_data/
 │   ├── northstar_master_data.json         # Single source of truth for all fictional values & rules
 │   └── source_of_truth/
@@ -332,7 +332,7 @@ The evaluation dataset contains **95 verified queries** covering 14 distinct tes
 4. **Template Licensing**: Source structural templates from BetterJobs and generic IT manuals were completely rewritten into original Northstar prose. End users must independently verify licensing for third-party templates.
 """
 
-with open("output/README.md", "w", encoding="utf-8") as f:
+with open("knowledge_base/README.md", "w", encoding="utf-8") as f:
     f.write(readme_content)
 
 with open("README.md", "w", encoding="utf-8") as f:
