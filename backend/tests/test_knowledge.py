@@ -11,6 +11,10 @@ Tests:
   e) Fail-closed: unknown employee → 0 rows; inactive employee → 0 rows.
   f) File-serving allowed_groups verification for selected documents.
   g) Full-text tsquery on content_tsv returns ≥ 1 chunk.
+  h) Real stale-policy / stale-state filter tests via UPDATE inside a rolled-back
+     transaction: access_policy_version='v0.9', lifecycle_state='SUPERSEDED',
+     index_flag='ARCHIVE'.
+  i) seed_knowledge validate_knowledge_manifests raises on corrupted records.
 """
 import hashlib
 import json
@@ -18,10 +22,11 @@ import sys
 from pathlib import Path
 
 import pytest
-from sqlalchemy import func, select, text
+from sqlalchemy import func, select, text, update
 from sqlalchemy.orm import Session
 
 from app.core.config import settings
+from app.db.seed_knowledge import validate_knowledge_manifests
 from app.models.document import Document
 from app.models.document_chunk import DocumentChunk
 from app.models.document_section import DocumentSection
@@ -135,7 +140,7 @@ def test_c_authorizer_parity(db_session: Session):
                 )
             total_comparisons += 1
 
-    assert total_comparisons == 1807, f"Expected 1807 comparisons, got {total_comparisons}"
+    assert total_comparisons == 13 * 139, f"Expected {13 * 139} comparisons, got {total_comparisons}"
     assert len(mismatches) == 0, (
         f"{len(mismatches)} parity mismatches:\n" + "\n".join(mismatches[:20])
     )
@@ -309,3 +314,164 @@ def test_g_fulltext_tsquery(db_session: Session):
         )
     ).scalars().all()
     assert len(result) >= 1, "Expected at least 1 chunk matching 'remote & work'"
+
+
+# ---------------------------------------------------------------------------
+# (h) Real stale-policy / stale-state UPDATE tests inside rolled-back txn
+# ---------------------------------------------------------------------------
+def test_h_stale_filters_real_update(db_session: Session):
+    """UPDATE a chunk's access_policy_version / lifecycle_state / index_flag inside
+    a savepoint, verify fetch_authorized_chunk_codes returns 0 for all 13 employees,
+    then roll back and verify the chunk IS returned to its allowed employees."""
+
+    employees = db_session.execute(
+        select(Employee).order_by(Employee.employee_code)
+    ).scalars().all()
+    assert len(employees) == 13
+
+    # Pick an ALL_EMPLOYEES CURRENT/INDEX chunk as the target.
+    target = db_session.execute(
+        select(DocumentChunk)
+        .where(
+            DocumentChunk.lifecycle_state == "CURRENT",
+            DocumentChunk.index_flag == "INDEX",
+            DocumentChunk.classification_audience == "ALL_EMPLOYEES",
+        )
+        .limit(1)
+    ).scalar_one()
+    target_code = target.chunk_code
+
+    # Confirm the chunk IS visible to all 13 employees before mutation.
+    for emp in employees:
+        allowed = fetch_authorized_chunk_codes(db_session, emp.employee_code)
+        assert target_code in allowed, (
+            f"Before update: {emp.employee_code} should see {target_code}"
+        )
+
+    # --- Sub-test 1: access_policy_version = 'v0.9' ---
+    # v0.9 matches the regex ^v[0-9]+\.[0-9]+$ so the CHECK constraint allows it.
+    sp1 = db_session.begin_nested()
+    db_session.execute(
+        text("UPDATE document_chunks SET access_policy_version = 'v0.9' WHERE chunk_code = :code"),
+        {"code": target_code},
+    )
+    db_session.flush()
+    for emp in employees:
+        allowed = fetch_authorized_chunk_codes(db_session, emp.employee_code)
+        assert target_code not in allowed, (
+            f"access_policy_version=v0.9: {emp.employee_code} should NOT see {target_code}"
+        )
+    sp1.rollback()
+
+    # Confirm restored.
+    for emp in employees:
+        allowed = fetch_authorized_chunk_codes(db_session, emp.employee_code)
+        assert target_code in allowed, (
+            f"After rollback (apv): {emp.employee_code} should again see {target_code}"
+        )
+
+    # --- Sub-test 2: lifecycle_state = 'SUPERSEDED' ---
+    sp2 = db_session.begin_nested()
+    db_session.execute(
+        text("UPDATE document_chunks SET lifecycle_state = 'SUPERSEDED' WHERE chunk_code = :code"),
+        {"code": target_code},
+    )
+    db_session.flush()
+    for emp in employees:
+        allowed = fetch_authorized_chunk_codes(db_session, emp.employee_code)
+        assert target_code not in allowed, (
+            f"lifecycle_state=SUPERSEDED: {emp.employee_code} should NOT see {target_code}"
+        )
+    sp2.rollback()
+
+    for emp in employees:
+        allowed = fetch_authorized_chunk_codes(db_session, emp.employee_code)
+        assert target_code in allowed, (
+            f"After rollback (lifecycle): {emp.employee_code} should again see {target_code}"
+        )
+
+    # --- Sub-test 3: index_flag = 'ARCHIVE' ---
+    sp3 = db_session.begin_nested()
+    db_session.execute(
+        text("UPDATE document_chunks SET index_flag = 'ARCHIVE' WHERE chunk_code = :code"),
+        {"code": target_code},
+    )
+    db_session.flush()
+    for emp in employees:
+        allowed = fetch_authorized_chunk_codes(db_session, emp.employee_code)
+        assert target_code not in allowed, (
+            f"index_flag=ARCHIVE: {emp.employee_code} should NOT see {target_code}"
+        )
+    sp3.rollback()
+
+    for emp in employees:
+        allowed = fetch_authorized_chunk_codes(db_session, emp.employee_code)
+        assert target_code in allowed, (
+            f"After rollback (index_flag): {emp.employee_code} should again see {target_code}"
+        )
+
+
+# ---------------------------------------------------------------------------
+# (i) validate_knowledge_manifests raises on corrupted in-memory records
+# ---------------------------------------------------------------------------
+def test_i_validate_knowledge_manifests_raises(db_session: Session):
+    """Feed deliberately corrupted in-memory records to validate_knowledge_manifests
+    and assert each violation causes a ValueError. No knowledge_base files are modified."""
+    import copy
+
+    with open(MASTER_DATA_PATH, "r", encoding="utf-8") as f:
+        md = json.load(f)
+
+    kb_dir = settings.KNOWLEDGE_BASE_DIR
+    meta_dir = kb_dir / "05_rag_metadata"
+
+    # Load real manifests (read-only)
+    docs = [json.loads(l) for l in open(meta_dir / "document_manifest.jsonl") if l.strip()]
+    sections = [json.loads(l) for l in open(meta_dir / "section_index.jsonl") if l.strip()]
+    chunks = [json.loads(l) for l in open(meta_dir / "chunk_manifest.jsonl") if l.strip()]
+    access_matrix = md["Access_Control_Matrix"]
+
+    # --- Corruption 1: allowed_groups does not match the audience label ---
+    bad_docs = copy.deepcopy(docs)
+    bad_docs[0]["document_allowed_groups"] = ["GRP_DEPT_HR"]  # wrong for ALL_EMPLOYEES doc
+    # Ensure the doc has ALL_EMPLOYEES audience so this is definitely a mismatch.
+    bad_docs[0]["document_audience"] = "ALL_EMPLOYEES"
+    with pytest.raises(ValueError, match="violation"):
+        validate_knowledge_manifests(
+            docs=bad_docs,
+            sections=sections,
+            chunks=chunks,
+            access_matrix=access_matrix,
+            kb_dir=kb_dir,
+        )
+
+    # --- Corruption 2: chunk allowed_groups wider than its parent section ---
+    # Find a chunk whose section is HR_ONLY, then give the chunk ALL_EMPLOYEES groups.
+    bad_chunks = copy.deepcopy(chunks)
+    ru_chunk = next((c for c in bad_chunks if c.get("restricted_unit_id") == "RU-001"), None)
+    assert ru_chunk is not None, "Expected at least one RU-001 chunk in manifest"
+    original_groups = ru_chunk["allowed_groups"]
+    ru_chunk["allowed_groups"] = ["GRP_ALL_EMPLOYEES"]  # wider than section's HR_ONLY
+    ru_chunk["classification_audience"] = "ALL_EMPLOYEES"  # make audience match groups
+    with pytest.raises(ValueError, match="violation"):
+        validate_knowledge_manifests(
+            docs=docs,
+            sections=sections,
+            chunks=bad_chunks,
+            access_matrix=access_matrix,
+            kb_dir=kb_dir,
+        )
+    ru_chunk["allowed_groups"] = original_groups
+    ru_chunk["classification_audience"] = "HR_ONLY"
+
+    # --- Corruption 3: wrong SHA-256 in manifest ---
+    bad_docs2 = copy.deepcopy(docs)
+    bad_docs2[0]["source_docx_sha256"] = "a" * 64  # all-'a' is a valid hex-64 but wrong hash
+    with pytest.raises(ValueError, match="violation"):
+        validate_knowledge_manifests(
+            docs=bad_docs2,
+            sections=sections,
+            chunks=chunks,
+            access_matrix=access_matrix,
+            kb_dir=kb_dir,
+        )
