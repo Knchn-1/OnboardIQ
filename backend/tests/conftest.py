@@ -7,6 +7,7 @@ from sqlalchemy.orm import sessionmaker
 
 from app.core.config import settings
 from app.db.seed_org import seed_organization
+from app.db.seed_knowledge import seed_knowledge
 
 TEST_DB_NAME = "onboardiq_test"
 
@@ -33,6 +34,7 @@ def test_db_setup():
     # Initial seed
     with TestSessionLocal() as session:
         seed_organization(session)
+        seed_knowledge(session)
 
     yield TestSessionLocal
 
